@@ -1,0 +1,7 @@
+{
+  "parent": "pressure:block/valve",
+  "textures": {
+    "side": "pressure:block/checkvalve/side_off",
+    "front": "pressure:block/checkvalve/front"
+  }
+}

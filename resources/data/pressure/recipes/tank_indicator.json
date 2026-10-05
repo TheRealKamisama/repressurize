@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TLT",
+    "TLT",
+    "   "
+  ],
+  "key": {
+    "T": {
+      "item": "pressure:tank_wall"
+    },
+    "L": {
+      "item": "minecraft:glass_pane"
+    }
+  },
+  "result": {
+    "item": "pressure:tank_indicator",
+    "count": 1
+  }
+}

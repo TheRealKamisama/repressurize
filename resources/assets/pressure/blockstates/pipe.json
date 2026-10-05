@@ -1,66 +1,100 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "textures": {"pipe": "pressure:blocks/pipe"}
-  },
-  "variants": {
-    "straight": {
-      "x": {"model": "pressure:pipe_straight", "x": 90, "y": 90},
-      "y": {"model": "pressure:pipe_straight"},
-      "z": {"model": "pressure:pipe_straight", "x": 90},
-      "none": {"model": "pressure:pipe_center"}
-    },
-    "east": {
-      "true": {
-        "submodel": {
-          "s1": {"model": "pressure:pipe_section", "x": 90, "y": 90}
-        }
+  "multipart": [
+    {
+      "when": {
+        "straight": "none"
       },
-      "false": {}
+      "apply": {
+        "model": "pressure:block/pipe_center"
+      }
     },
-    "west": {
-      "true": {
-        "submodel": {
-          "s2": {"model": "pressure:pipe_section", "x": 90, "y": 270}
-        }
+    {
+      "when": {
+        "straight": "x"
       },
-      "false": {}
+      "apply": {
+        "model": "pressure:block/pipe_straight",
+        "y": 90,
+        "x": 90
+      }
     },
-    "north": {
-      "true": {
-        "submodel": {
-          "s3": {"model": "pressure:pipe_section", "x": 90}
-        }
+    {
+      "when": {
+        "straight": "y"
       },
-      "false": {}
+      "apply": {
+        "model": "pressure:block/pipe_straight"
+      }
     },
-    "south": {
-      "true": {
-        "submodel": {
-          "s4": {"model": "pressure:pipe_section", "x": 270}
-        }
+    {
+      "when": {
+        "straight": "z"
       },
-      "false": {}
+      "apply": {
+        "model": "pressure:block/pipe_straight",
+        "x": 90
+      }
     },
-    "down": {
-      "true": {
-        "submodel": {
-          "s5": {"model": "pressure:pipe_section", "x": 180}
-        }
+    {
+      "when": {
+        "straight": "none",
+        "east": "true"
       },
-      "false": {}
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 90,
+        "y": 90
+      }
     },
-    "up": {
-      "true": {
-        "submodel": {
-          "s6": {"model": "pressure:pipe_section"}
-        }
+    {
+      "when": {
+        "straight": "none",
+        "west": "true"
       },
-      "false": {}
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 90,
+        "y": 270
+      }
     },
-    "inventory": {
-      "model": "pressure:pipe_center",
-      "transform": "forge:default-block"
+    {
+      "when": {
+        "straight": "none",
+        "north": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "straight": "none",
+        "south": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "straight": "none",
+        "down": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "straight": "none",
+        "up": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section"
+      }
     }
-  }
+  ]
 }

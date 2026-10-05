@@ -1,15 +1,7 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "textures": {
-      "all": "pressure:blocks/router/main"
-    },
-    "model": "pressure:router.extended"
-  },
   "variants": {
-    "normal": [{}],
-    "inventory": {
-      "transform": "forge:default-block"
+    "": {
+      "model": "pressure:block/router"
     }
   }
 }

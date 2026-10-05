@@ -1,19 +1,7 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "textures": {
-      "top": "pressure:blocks/tank/block/main",
-      "bottom": "pressure:blocks/tank/block/main",
-      "side": "pressure:blocks/tank/block/main"
-    },
-    "model": "pressure:sided_multiblock.extended"
-  },
   "variants": {
-    "normal": [
-      {}
-    ],
-    "inventory": {
-      "transform": "forge:default-block"
+    "": {
+      "model": "pressure:block/tank_block"
     }
   }
 }

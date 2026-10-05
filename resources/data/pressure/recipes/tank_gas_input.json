@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AFA",
+    "I I",
+    "TIT"
+  ],
+  "key": {
+    "F": {
+      "item": "pressure:fluid_interface"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "T": {
+      "item": "pressure:tank_wall"
+    },
+    "A": {
+      "tag": "mekanism:alloys/advanced"
+    }
+  },
+  "result": {
+    "item": "pressure:tank_gas_input",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ]
+}

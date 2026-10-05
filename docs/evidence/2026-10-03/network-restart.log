@@ -1,0 +1,63 @@
+2026-10-03 17:17:51,779 main WARN Advanced terminal features are not available in this environment
+[17:17:52] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeserver, --fml.forgeVersion, 47.1.39, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, nogui]
+[17:17:52] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.20.1 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[17:17:53] [main/INFO] [ne.mi.fm.lo.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgeserver
+[17:17:53] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/TheRe/Documents/ChatGPT/Repressurise/build/package-server/libraries/org/spongepowered/mixin/0.8.5/mixin-0.8.5.jar%2365!/ Service=ModLauncher Env=SERVER
+[17:17:55] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file C:\Users\TheRe\Documents\ChatGPT\Repressurise\build\package-server\libraries\net\minecraftforge\fmlcore\1.20.1-47.1.39\fmlcore-1.20.1-47.1.39.jar is missing mods.toml file
+[17:17:55] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file C:\Users\TheRe\Documents\ChatGPT\Repressurise\build\package-server\libraries\net\minecraftforge\javafmllanguage\1.20.1-47.1.39\javafmllanguage-1.20.1-47.1.39.jar is missing mods.toml file
+[17:17:55] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file C:\Users\TheRe\Documents\ChatGPT\Repressurise\build\package-server\libraries\net\minecraftforge\lowcodelanguage\1.20.1-47.1.39\lowcodelanguage-1.20.1-47.1.39.jar is missing mods.toml file
+[17:17:55] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file C:\Users\TheRe\Documents\ChatGPT\Repressurise\build\package-server\libraries\net\minecraftforge\mclanguage\1.20.1-47.1.39\mclanguage-1.20.1-47.1.39.jar is missing mods.toml file
+[17:17:56] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[17:18:01] [main/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeserver' with arguments [nogui]
+[17:18:25] [modloading-worker-0/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Forge mod loading, version 47.1.39, for MC 1.20.1 with MCP 20230612.114412
+[17:18:25] [modloading-worker-0/INFO] [ne.mi.co.MinecraftForge/FORGE]: MinecraftForge v47.1.39 Initialized
+[17:18:26] [modloading-worker-0/INFO] [ne.bd.li.ne.NetChannel/]: Initialized network channel 'multiblock' for mod 'bdlib'
+[17:18:26] [modloading-worker-0/INFO] [ne.bd.li.ne.NetChannel/]: Initialized network channel 'misc' for mod 'bdlib'
+[17:18:29] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[17:18:32] [main/INFO] [mojang/YggdrasilAuthenticationService]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[17:18:33] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forge] Found status: OUTDATED Current: 47.1.39 Target: 47.4.10
+[17:18:34] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/C:/Users/TheRe/Documents/ChatGPT/Repressurise/build/package-server/libraries/net/minecraft/server/1.20.1-20230612.114412/server-1.20.1-20230612.114412-srg.jar%23109!/assets/.mcassetsroot' uses unexpected schema
+[17:18:34] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/C:/Users/TheRe/Documents/ChatGPT/Repressurise/build/package-server/libraries/net/minecraft/server/1.20.1-20230612.114412/server-1.20.1-20230612.114412-srg.jar%23109!/data/.mcassetsroot' uses unexpected schema
+[17:18:40] [main/INFO] [minecraft/RecipeManager]: Loaded 7 recipes
+[17:18:40] [main/INFO] [minecraft/AdvancementList]: Loaded 1271 advancements
+[17:18:41] [Server thread/INFO] [minecraft/DedicatedServer]: Starting minecraft server version 1.20.1
+[17:18:41] [Server thread/INFO] [minecraft/DedicatedServer]: Loading properties
+[17:18:41] [Server thread/INFO] [minecraft/DedicatedServer]: Default game type: CREATIVE
+[17:18:41] [Server thread/INFO] [minecraft/MinecraftServer]: Generating keypair
+[17:18:42] [Server thread/INFO] [minecraft/DedicatedServer]: Starting Minecraft server on 127.0.0.1:25595
+[17:18:42] [Server thread/INFO] [minecraft/ServerConnectionListener]: Using default channel type
+[17:18:42] [Server thread/WARN] [minecraft/DedicatedServer]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[17:18:42] [Server thread/WARN] [minecraft/DedicatedServer]: The server will make no attempt to authenticate usernames. Beware.
+[17:18:42] [Server thread/WARN] [minecraft/DedicatedServer]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[17:18:42] [Server thread/WARN] [minecraft/DedicatedServer]: To change this, set "online-mode" to "true" in the server.properties file.
+[17:18:42] [Server thread/INFO] [minecraft/DedicatedServer]: Preparing level "pressure-packaging-qa"
+[17:18:43] [Server thread/INFO] [minecraft/MinecraftServer]: Preparing start region for dimension minecraft:overworld
+[17:18:48] [Worker-Main-6/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:18:48] [Worker-Main-11/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:18:48] [Worker-Main-6/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:18:48] [Worker-Main-6/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:18:48] [Worker-Main-11/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:18:48] [Worker-Main-8/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:18:48] [Worker-Main-8/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:18:48] [Worker-Main-8/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:18:48] [Worker-Main-8/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:18:48] [Worker-Main-8/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:18:48] [Worker-Main-6/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:18:48] [Worker-Main-2/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:18:49] [Worker-Main-9/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 22%
+[17:18:49] [Worker-Main-7/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 55%
+[17:18:50] [Worker-Main-12/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 89%
+[17:18:50] [Server thread/INFO] [minecraft/LoggerChunkProgressListener]: Time elapsed: 7136 ms
+[17:18:50] [Server thread/INFO] [minecraft/DedicatedServer]: Done (7.849s)! For help, type "help"
+[17:18:50] [Server thread/INFO] [ne.mi.se.pe.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
+PRESSURE_NETWORK_QA_RELOAD_PASSED
+[17:18:55] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[17:18:55] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players
+[17:18:55] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds
+[17:18:56] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[pressure-packaging-qa]'/minecraft:overworld
+[17:18:57] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[pressure-packaging-qa]'/minecraft:the_nether
+[17:18:57] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[pressure-packaging-qa]'/minecraft:the_end
+[17:18:57] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (pressure-packaging-qa): All chunks are saved
+[17:18:57] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[17:18:57] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[17:18:57] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved

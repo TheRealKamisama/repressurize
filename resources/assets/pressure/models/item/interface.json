@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "pressure:items/interface"
+    "layer0": "pressure:item/interface"
   }
 }

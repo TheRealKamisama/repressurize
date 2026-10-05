@@ -1,0 +1,8 @@
+{
+  "parent": "pressure:block/rotated",
+  "textures": {
+    "side": "pressure:block/drain/side",
+    "front": "pressure:block/drain/front",
+    "back": "pressure:block/drain/back"
+  }
+}

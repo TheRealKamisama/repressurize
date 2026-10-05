@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "pressure:tank_pressure_output"
+    }
+  ],
+  "result": {
+    "item": "pressure:tank_pressure_input"
+  }
+}

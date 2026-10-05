@@ -1,0 +1,7 @@
+{
+  "parent": "pressure:block/valve",
+  "textures": {
+    "side": "pressure:block/pipe_sensor/side_on",
+    "front": "pressure:block/pipe_sensor/front"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TST",
+    "S S",
+    "TST"
+  ],
+  "key": {
+    "T": {
+      "item": "pressure:tank_wall"
+    },
+    "S": {
+      "item": "minecraft:iron_bars"
+    }
+  },
+  "result": {
+    "item": "pressure:tank_filter",
+    "count": 1
+  }
+}

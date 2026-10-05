@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "pressure:block/creative",
+    "particle": "pressure:block/creative"
+  }
+}

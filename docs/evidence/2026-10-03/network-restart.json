@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "filter": "minecraft:lava",
+  "canisterAmount": 1500,
+  "placedSource": true,
+  "outputMode": "RS_ON",
+  "tankAmount": 12000
+}

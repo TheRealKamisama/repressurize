@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TOT",
+    "I I",
+    "TOT"
+  ],
+  "key": {
+    "T": {
+      "item": "pressure:tank_wall"
+    },
+    "O": {
+      "item": "minecraft:hopper"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "pressure:tank_interface",
+    "count": 1
+  }
+}

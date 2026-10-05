@@ -1,19 +1,27 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "textures": {
-      "top": "pressure:blocks/tank/filter/main",
-      "bottom": "pressure:blocks/tank/filter/main",
-      "side": "pressure:blocks/tank/filter/main"
-    },
-    "model": "pressure:sided_multiblock_filter.extended"
-  },
   "variants": {
-    "normal": [
-      {}
-    ],
-    "inventory": {
-      "transform": "forge:default-block"
+    "facing=north": {
+      "model": "pressure:block/tank_filter"
+    },
+    "facing=south": {
+      "model": "pressure:block/tank_filter",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "pressure:block/tank_filter",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "pressure:block/tank_filter",
+      "y": 90
+    },
+    "facing=up": {
+      "model": "pressure:block/tank_filter",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "pressure:block/tank_filter",
+      "x": 90
     }
   }
 }

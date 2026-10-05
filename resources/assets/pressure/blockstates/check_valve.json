@@ -1,48 +1,248 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "textures": {
-      "side": "pressure:blocks/checkvalve/side_off",
-      "front": "pressure:blocks/checkvalve/front",
-      "pipe": "pressure:blocks/pipe"
-    },
-    "model": "pressure:valve"
-  },
-  "variants": {
-    "signal": {
-      "true": {
-        "textures": {
-          "side": "pressure:blocks/checkvalve/side_on"
-        }
+  "multipart": [
+    {
+      "when": {
+        "facing": "up",
+        "signal": "false"
       },
-      "false": {}
+      "apply": {
+        "model": "pressure:block/valve_off"
+      }
     },
-    "facing": {
-      "down": {"x": 180},
-      "up": {},
-      "north": {"x": 90},
-      "south": {"x": 270},
-      "west": {"x": 90, "y": 270},
-      "east": {"x": 90, "y": 90}
-    },
-    "back": {
-      "true": {
-        "submodel": {
-          "s1": {"model": "pressure:pipe_section", "x": 180}
-        }
+    {
+      "when": {
+        "facing": "up",
+        "signal": "true"
       },
-      "false": {}
+      "apply": {
+        "model": "pressure:block/valve_on"
+      }
     },
-    "front": {
-      "true": {
-        "submodel": {
-          "s2": {"model": "pressure:pipe_section"}
-        }
+    {
+      "when": {
+        "facing": "up",
+        "front": "true"
       },
-      "false": {}
+      "apply": {
+        "model": "pressure:block/pipe_section"
+      }
     },
-    "inventory": {
-      "transform": "forge:default-block"
+    {
+      "when": {
+        "facing": "up",
+        "back": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "signal": "false"
+      },
+      "apply": {
+        "model": "pressure:block/valve_off",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "signal": "true"
+      },
+      "apply": {
+        "model": "pressure:block/valve_on",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "front": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "back": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "signal": "false"
+      },
+      "apply": {
+        "model": "pressure:block/valve_off",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "signal": "true"
+      },
+      "apply": {
+        "model": "pressure:block/valve_on",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "front": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "back": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "signal": "false"
+      },
+      "apply": {
+        "model": "pressure:block/valve_off",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "signal": "true"
+      },
+      "apply": {
+        "model": "pressure:block/valve_on",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "front": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "back": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "signal": "false"
+      },
+      "apply": {
+        "model": "pressure:block/valve_off",
+        "x": 90,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "signal": "true"
+      },
+      "apply": {
+        "model": "pressure:block/valve_on",
+        "x": 90,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "front": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 90,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "back": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 90,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "signal": "false"
+      },
+      "apply": {
+        "model": "pressure:block/valve_off",
+        "x": 90,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "signal": "true"
+      },
+      "apply": {
+        "model": "pressure:block/valve_on",
+        "x": 90,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "front": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 90,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "back": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 90,
+        "y": 90
+      }
     }
-  }
+  ]
 }

@@ -1,0 +1,13 @@
+{
+  "canisterAmount": 1500,
+  "passed": true,
+  "players": {
+    "PressureQA1": "d1f33fef-b1de-3947-81a9-a0932a3946a6",
+    "PressureQA2": "cce4976e-5207-3ab3-8653-d17492585029"
+  },
+  "fluidAmount": 12000,
+  "outputMode": "RS_ON",
+  "chunkReloaded": true,
+  "filter": "minecraft:lava",
+  "capacity": 64000
+}

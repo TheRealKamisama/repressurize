@@ -1,19 +1,27 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "textures": {
-      "top": "pressure:blocks/tank/gas_output/main",
-      "bottom": "pressure:blocks/tank/gas_output/main",
-      "side": "pressure:blocks/tank/gas_output/main"
-    },
-    "model": "pressure:sided_multiblock_output.extended"
-  },
   "variants": {
-    "normal": [
-      {}
-    ],
-    "inventory": {
-      "transform": "forge:default-block"
+    "facing=north": {
+      "model": "pressure:block/tank_gas_output"
+    },
+    "facing=south": {
+      "model": "pressure:block/tank_gas_output",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "pressure:block/tank_gas_output",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "pressure:block/tank_gas_output",
+      "y": 90
+    },
+    "facing=up": {
+      "model": "pressure:block/tank_gas_output",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "pressure:block/tank_gas_output",
+      "x": 90
     }
   }
 }

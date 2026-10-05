@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ICP",
+    "H G",
+    "ICP"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "C": {
+      "item": "minecraft:green_dye"
+    },
+    "P": {
+      "item": "minecraft:piston"
+    },
+    "H": {
+      "item": "pressure:interface"
+    },
+    "G": {
+      "item": "minecraft:iron_bars"
+    }
+  },
+  "result": {
+    "item": "pressure:sluice",
+    "count": 1
+  }
+}

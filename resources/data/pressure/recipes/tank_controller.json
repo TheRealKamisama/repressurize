@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TRT",
+    "RDR",
+    "TRT"
+  ],
+  "key": {
+    "T": {
+      "item": "pressure:tank_wall"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "pressure:tank_controller",
+    "count": 1
+  }
+}

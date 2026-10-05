@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ICG",
+    "H G",
+    "ICG"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "C": {
+      "item": "minecraft:green_dye"
+    },
+    "G": {
+      "item": "minecraft:iron_bars"
+    },
+    "H": {
+      "item": "pressure:interface"
+    }
+  },
+  "result": {
+    "item": "pressure:drain",
+    "count": 1
+  }
+}

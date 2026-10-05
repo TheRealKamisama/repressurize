@@ -1,65 +1,248 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "textures": {
-      "side": "pressure:blocks/pipe_sensor/side_off",
-      "front": "pressure:blocks/pipe_sensor/front",
-      "pipe": "pressure:blocks/pipe"
-    },
-    "model": "pressure:valve"
-  },
-  "variants": {
-    "signal": {
-      "true": {
-        "textures": {
-          "side": "pressure:blocks/pipe_sensor/side_on"
-        }
+  "multipart": [
+    {
+      "when": {
+        "facing": "up",
+        "signal": "false"
       },
-      "false": {}
+      "apply": {
+        "model": "pressure:block/pipe_sensor_off"
+      }
     },
-    "facing": {
-      "down": {
+    {
+      "when": {
+        "facing": "up",
+        "signal": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_sensor_on"
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "front": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section"
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "back": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
         "x": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "signal": "false"
       },
-      "up": {},
-      "north": {
+      "apply": {
+        "model": "pressure:block/pipe_sensor_off",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "signal": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_sensor_on",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "front": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "back": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "signal": "false"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_sensor_off",
         "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "signal": "true"
       },
-      "south": {
+      "apply": {
+        "model": "pressure:block/pipe_sensor_on",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "front": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "back": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
         "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "signal": "false"
       },
-      "west": {
-        "x": 90,
-        "y": 270
+      "apply": {
+        "model": "pressure:block/pipe_sensor_off",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "signal": "true"
       },
-      "east": {
+      "apply": {
+        "model": "pressure:block/pipe_sensor_on",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "front": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "back": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "signal": "false"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_sensor_off",
         "x": 90,
         "y": 90
       }
     },
-    "back": {
-      "true": {
-        "submodel": {
-          "s1": {
-            "model": "pressure:pipe_section",
-            "x": 180
-          }
-        }
+    {
+      "when": {
+        "facing": "east",
+        "signal": "true"
       },
-      "false": {}
+      "apply": {
+        "model": "pressure:block/pipe_sensor_on",
+        "x": 90,
+        "y": 90
+      }
     },
-    "front": {
-      "true": {
-        "submodel": {
-          "s2": {
-            "model": "pressure:pipe_section"
-          }
-        }
+    {
+      "when": {
+        "facing": "east",
+        "front": "true"
       },
-      "false": {}
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 90,
+        "y": 90
+      }
     },
-    "inventory": {
-      "transform": "forge:default-block"
+    {
+      "when": {
+        "facing": "east",
+        "back": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 90,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "signal": "false"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_sensor_off",
+        "x": 90,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "signal": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_sensor_on",
+        "x": 90,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "front": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 90,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "back": "true"
+      },
+      "apply": {
+        "model": "pressure:block/pipe_section",
+        "x": 90,
+        "y": 90
+      }
     }
-  }
+  ]
 }

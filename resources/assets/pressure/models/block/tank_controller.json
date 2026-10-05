@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "side": "pressure:block/tank/controller/main",
+    "top": "pressure:block/tank/controller/top",
+    "bottom": "pressure:block/tank/controller/bottom"
+  }
+}

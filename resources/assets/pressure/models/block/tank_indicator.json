@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "side": "pressure:block/tank/indicator/single",
+    "top": "pressure:block/tank/indicator/main",
+    "bottom": "pressure:block/tank/indicator/main",
+    "particle": "pressure:block/tank/indicator/single"
+  }
+}

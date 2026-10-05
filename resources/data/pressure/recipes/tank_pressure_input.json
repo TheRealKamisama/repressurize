@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CHC",
+    "I I",
+    "TIT"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:green_dye"
+    },
+    "H": {
+      "item": "pressure:interface"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "T": {
+      "item": "pressure:tank_wall"
+    }
+  },
+  "result": {
+    "item": "pressure:tank_pressure_input",
+    "count": 1
+  }
+}

@@ -1,0 +1,36 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MMPL-1.0"
+issueTrackerURL="https://github.com/TheRealKamisama/repressurize/issues"
+
+[[mods]]
+modId="pressure"
+version="${version}"
+displayName="Pressure Pipes Repressurized"
+displayURL="https://github.com/TheRealKamisama/repressurize"
+authors="Pressure Pipes Repressurized contributors"
+description='''
+High-pressure fluid pipes, pumps, valves, filters, canisters, routers, and tanks for Forge 1.20.1.
+'''
+
+[[dependencies.pressure]]
+modId="forge"
+mandatory=true
+versionRange="[47.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.pressure]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.20.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.pressure]]
+modId="bdlib"
+mandatory=true
+versionRange="[1.27.0,)"
+ordering="AFTER"
+side="BOTH"
+

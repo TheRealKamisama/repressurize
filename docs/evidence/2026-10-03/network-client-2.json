@@ -1,0 +1,10 @@
+{
+  "player": "PressureQA2",
+  "filter": "minecraft:lava",
+  "capacity": 64000,
+  "passed": true,
+  "outputMode": "RS_ON",
+  "placedSource": true,
+  "tankAmount": 12000,
+  "chunkReloaded": true
+}

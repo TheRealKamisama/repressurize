@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ICI",
+    "I I",
+    "IHI"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "C": {
+      "item": "minecraft:green_dye"
+    },
+    "H": {
+      "item": "pressure:interface"
+    }
+  },
+  "result": {
+    "item": "pressure:input",
+    "count": 1
+  }
+}

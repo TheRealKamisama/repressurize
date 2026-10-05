@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "pressure:block/tank/fluid_output_auto/main",
+    "particle": "pressure:block/tank/fluid_output_auto/main"
+  }
+}

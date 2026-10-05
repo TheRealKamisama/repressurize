@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CIC",
+    "IPI",
+    "TFT"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:green_dye"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "P": {
+      "item": "minecraft:piston"
+    },
+    "T": {
+      "item": "pressure:tank_wall"
+    },
+    "F": {
+      "item": "pressure:fluid_interface"
+    }
+  },
+  "result": {
+    "item": "pressure:tank_fluid_output_auto",
+    "count": 1
+  }
+}

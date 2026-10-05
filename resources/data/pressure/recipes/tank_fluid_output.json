@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CIC",
+    "I I",
+    "TFT"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:green_dye"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "T": {
+      "item": "pressure:tank_wall"
+    },
+    "F": {
+      "item": "pressure:fluid_interface"
+    }
+  },
+  "result": {
+    "item": "pressure:tank_fluid_output",
+    "count": 1
+  }
+}

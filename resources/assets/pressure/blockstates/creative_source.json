@@ -1,15 +1,7 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "textures": {
-      "all": "pressure:blocks/creative"
-    },
-    "model": "pressure:filtered_cube_all.extended"
-  },
   "variants": {
-    "normal": [{}],
-    "inventory": {
-      "transform": "forge:default-block"
+    "": {
+      "model": "pressure:block/creative_source"
     }
   }
 }

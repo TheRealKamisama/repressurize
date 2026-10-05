@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CFC",
+    "I I",
+    "TFT"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:green_dye"
+    },
+    "F": {
+      "item": "pressure:fluid_interface"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "T": {
+      "item": "pressure:tank_wall"
+    }
+  },
+  "result": {
+    "item": "pressure:tank_fluid_access",
+    "count": 1
+  }
+}
