@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "pumpFacing": "north",
+  "filter": "minecraft:water",
+  "player": "PressureQA2",
+  "sixOutputs": "RS_OFF"
+}

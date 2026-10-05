@@ -42,7 +42,9 @@ public final class PressureBlockEntityRenderer<T extends PressureNodeBlockEntity
             return;
         }
         if (entity instanceof TankModuleBlockEntity module) {
-            if (module.moduleName().equals("tank_indicator")) { indicator(module,pose,consumer,light); return; }
+            if (module.moduleName().equals("tank_indicator")) {
+                indicator(module,pose,buffers.getBuffer(RenderType.translucent())); return;
+            }
             TankControllerBlockEntity core=module.tankController();
             if (core!=null) {
                 for (int i=0;i<6;i++) {
@@ -78,19 +80,31 @@ public final class PressureBlockEntityRenderer<T extends PressureNodeBlockEntity
         }
     }
 
-    private static void indicator(TankModuleBlockEntity module,PoseStack pose,VertexConsumer consumer,int light) {
+    private static void indicator(TankModuleBlockEntity module,PoseStack pose,VertexConsumer consumer) {
         var core=module.tankController();
         if(core==null) return;
         var tank=core.getTank();
         for(Direction side:Direction.Plane.HORIZONTAL) {
             if(core.getBlockPos().equals(TankStructure.owner(module.getLevel(),module.getBlockPos().relative(side)))) continue;
             int below=column(module,side,Direction.DOWN),above=column(module,side,Direction.UP);
-            String texture=below>0 ? (above>0?"full":"up") : (above>0?"down":"single");
-            quad(pose,consumer,side,0,0,1,1,0.0002F,sprite("block/tank/indicator/"+texture),0xFFFFFFFF,light);
             if(tank.isEmpty() || tank.getCapacity()<=0) continue;
             float low=below>0?0:0.125F,high=above>0?1:0.875F;
             float fraction=Math.max(0,Math.min(1,(float)tank.getFluidAmount()/tank.getCapacity()*(above+below+1)-below));
-            if(fraction>0) fluid(pose,consumer,side,7F/16,low,9F/16,low+(high-low)*fraction,tank.getFluid(),0xF000F0);
+            if(fraction>0) {
+                int light = net.minecraft.client.renderer.LevelRenderer.getLightColor(module.getLevel(), module.getBlockPos().relative(side));
+                int emission = tank.getFluid().getFluid().getFluidType().getLightLevel(tank.getFluid());
+                light = net.minecraft.client.renderer.LightTexture.pack(Math.max(emission, net.minecraft.client.renderer.LightTexture.block(light)),
+                        net.minecraft.client.renderer.LightTexture.sky(light));
+                var extension = IClientFluidTypeExtensions.of(tank.getFluid().getFluid());
+                var texture = extension.getStillTexture(tank.getFluid());
+                if (texture == null) continue;
+                int color = extension.getTintColor(tank.getFluid());
+                float shade = module.getLevel().getShade(side, true);
+                int shaded = (color & 0xFF000000) | ((int)((color >> 16 & 255) * shade) << 16)
+                        | ((int)((color >> 8 & 255) * shade) << 8) | (int)((color & 255) * shade);
+                quad(pose,consumer,side,7F/16,low,9F/16,low+(high-low)*fraction,0.002F,
+                        Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(texture),shaded,light);
+            }
         }
     }
     private static int column(TankModuleBlockEntity module,Direction face,Direction vertical) {

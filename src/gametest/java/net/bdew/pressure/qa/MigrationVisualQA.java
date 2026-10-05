@@ -47,6 +47,7 @@ public final class MigrationVisualQA {
             phase=1; ticks=0;
             mc.options.pauseOnLostFocus=false;
             mc.options.particles().set(net.minecraft.client.ParticleStatus.ALL);
+            mc.options.guiScale().set(2);mc.getWindow().setWindowed(1280,960);mc.resizeDisplay();
             mc.createWorldOpenFlows().loadLevel(mc.screen,"Migration QA");
             return;
         }
@@ -146,7 +147,13 @@ public final class MigrationVisualQA {
                 item.setDeltaMovement(0,0,0);level.addFreshEntity(item);
             });
         } else if(phase==12 && ticks>60){
-            capture("12-pipe-dropped.png");phase=13;mc.stop();
+            capture("12-pipe-dropped.png");
+            if(net.minecraftforge.fml.ModList.get().isLoaded("mekanism") && net.minecraftforge.fml.ModList.get().isLoaded("jei")){
+                phase=50;ticks=0;JeiQaPlugin.showGasRecipe(0);
+            }else{phase=13;mc.stop();}
+        } else if(phase>=50 && phase<=53 && ticks>40){
+            capture("r5-jei-"+java.util.List.of("gas_input","gas_output","tank_gas_input","tank_gas_output").get(phase-50)+".png");
+            if(phase<53){phase++;ticks=0;JeiQaPlugin.showGasRecipe(phase-50);}else{phase=13;mc.stop();}
         }
     }
 
@@ -173,6 +180,8 @@ public final class MigrationVisualQA {
         try {
             var dir=mc.gameDirectory.toPath().resolve("screenshots"); Files.createDirectories(dir);
             try(var image=Screenshot.takeScreenshot(mc.getMainRenderTarget())) { image.writeToFile(dir.resolve(name)); }
+            if(mc.getMainRenderTarget().width<640 || mc.getMainRenderTarget().height<480)
+                throw new IllegalStateException("Invalid screenshot framebuffer dimensions: "+mc.getMainRenderTarget().width+"x"+mc.getMainRenderTarget().height);
             System.out.println("MIGRATION_QA_SCREENSHOT "+name);
         } catch(Exception e) { throw new IllegalStateException("Failed visual QA capture",e); }
     }

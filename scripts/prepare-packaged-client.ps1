@@ -1,6 +1,7 @@
 param(
-    [ValidatePattern('^Pressure(QA[12]|Visual)$')][string]$Username = 'PressureVisual',
-    [ValidateSet('visual','network')][string]$Mode = 'visual'
+    [ValidatePattern('^Pressure(QA[12]|Visual|RevisionBefore|RevisionAfter)$')][string]$Username = 'PressureVisual',
+    [ValidateSet('visual','network','revision')][string]$Mode = 'visual',
+    [switch]$Baseline
 )
 $ErrorActionPreference = 'Stop'
 $projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
@@ -82,23 +83,28 @@ function Get-Arguments($arguments) {
     }
 }
 $javaArgs = @('-Xms512M','-Xmx2G','-Dfile.encoding=UTF-8','-Dhttp.proxyHost=localhost','-Dhttp.proxyPort=7897','-Dhttps.proxyHost=localhost','-Dhttps.proxyPort=7897')
-$javaArgs += if ($Mode -eq 'network') { '-Dpressure.networkQaClient=true' } else { '-Dpressure.migrationQa=true' }
+$javaArgs += if ($Mode -eq 'network') { '-Dpressure.networkQaClient=true' } elseif ($Mode -eq 'revision') { '-Dpressure.revisionQa=true' } else { '-Dpressure.migrationQa=true' }
+if ($Mode -eq 'network') { $javaArgs += '-Dpressure.revisionNetwork=true' }
+if ($Baseline) { $javaArgs += '-Dpressure.revisionBaseline=true' }
 $javaArgs += Get-Arguments $vanilla.arguments.jvm
 $javaArgs += Get-Arguments $forge.arguments.jvm
 $javaArgs += '-DignoreList=bootstraplauncher,securejarhandler,asm-commons,asm-util,asm-analysis,asm-tree,asm,JarJarFileSystems,client-extra,fmlcore,javafmllanguage,lowcodelanguage,mclanguage,forge-,1.20.1.jar'
 $javaArgs += $forge.mainClass
 $javaArgs += Get-Arguments $vanilla.arguments.game
 $javaArgs += Get-Arguments $forge.arguments.game
-$javaArgs += @('--width','854','--height','480')
+$javaArgs += if ($Mode -ne 'network') { @('--width','1280','--height','960') } else { @('--width','854','--height','480') }
 $argFile = Join-Path $instance 'launch.args'
 $javaArgs | ForEach-Object { '"'+$_.Replace('"','\"')+'"' } | Set-Content -LiteralPath $argFile -Encoding utf8NoBOM
 Copy-Item -LiteralPath (Join-Path $projectRoot 'build/libs/pressure-2.0.0-DEV-mc1.20.1.jar') -Destination (Join-Path $instance 'mods')
+if ($Baseline) {
+    Copy-Item -LiteralPath (Join-Path $projectRoot 'build/migration-evidence/2026-10-05/baseline-pressure.jar') -Destination (Join-Path $instance 'mods/pressure-2.0.0-DEV-mc1.20.1.jar')
+}
 Copy-Item -LiteralPath (Join-Path $projectRoot 'build/qa/pressure-qa.jar') -Destination (Join-Path $instance 'mods')
 foreach ($dependency in @('bdlib-1.27.0.8-mc1.20.1.jar','scalablecatsforce-3.3.0-build-2-with-library.jar')) {
     Copy-Item -LiteralPath (Join-Path $projectRoot ('build/package-server/mods/'+$dependency)) -Destination (Join-Path $instance 'mods')
 }
 Copy-Item -LiteralPath (Join-Path $projectRoot 'run/options.txt') -Destination (Join-Path $instance 'options.txt')
-if ($Mode -eq 'visual' -and -not (Test-Path -LiteralPath (Join-Path $instance 'saves/Migration QA'))) {
+if ($Mode -ne 'network' -and -not (Test-Path -LiteralPath (Join-Path $instance 'saves/Migration QA'))) {
     New-Item -ItemType Directory -Force (Join-Path $instance 'saves') | Out-Null
     Copy-Item -LiteralPath (Join-Path $projectRoot 'build/render-qa/saves/Migration QA') -Destination (Join-Path $instance 'saves/Migration QA') -Recurse
 }

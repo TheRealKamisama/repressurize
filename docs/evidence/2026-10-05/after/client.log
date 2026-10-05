@@ -1,0 +1,416 @@
+2026-10-05 17:19:38,954 main WARN Advanced terminal features are not available in this environment
+[17:19:39] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--username, PressureRevisionAfter, --version, 1.20.1-forge-47.1.39, --gameDir, C:/Users/TheRe/Documents/ChatGPT/Repressurise/build/package-client/PressureRevisionAfter, --assetsDir, C:/Users/TheRe/.gradle/caches/forge_gradle/assets, --assetIndex, 5, --uuid, 445c69f5-a00a-3241-b93e-52626e52d654, --accessToken, ❄❄❄❄❄❄❄❄, --clientId, 0, --xuid, 0, --userType, legacy, --versionType, release, --launchTarget, forgeclient, --fml.forgeVersion, 47.1.39, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --width, 1280, --height, 960]
+[17:19:39] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.20.1 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[17:19:41] [main/INFO] [ne.mi.fm.lo.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because splash screen is disabled
+[17:19:42] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/TheRe/Documents/ChatGPT/Repressurise/build/package-client/libraries/org/spongepowered/mixin/0.8.5/mixin-0.8.5.jar%23150!/ Service=ModLauncher Env=CLIENT
+[17:19:43] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file C:\Users\TheRe\Documents\ChatGPT\Repressurise\build\package-client\libraries\net\minecraftforge\fmlcore\1.20.1-47.1.39\fmlcore-1.20.1-47.1.39.jar is missing mods.toml file
+[17:19:43] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file C:\Users\TheRe\Documents\ChatGPT\Repressurise\build\package-client\libraries\net\minecraftforge\javafmllanguage\1.20.1-47.1.39\javafmllanguage-1.20.1-47.1.39.jar is missing mods.toml file
+[17:19:43] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file C:\Users\TheRe\Documents\ChatGPT\Repressurise\build\package-client\libraries\net\minecraftforge\lowcodelanguage\1.20.1-47.1.39\lowcodelanguage-1.20.1-47.1.39.jar is missing mods.toml file
+[17:19:43] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file C:\Users\TheRe\Documents\ChatGPT\Repressurise\build\package-client\libraries\net\minecraftforge\mclanguage\1.20.1-47.1.39\mclanguage-1.20.1-47.1.39.jar is missing mods.toml file
+[17:19:44] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/]: Found 5 dependencies adding them to mods collection
+[17:19:50] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[17:19:50] [main/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclient' with arguments [--version, 1.20.1-forge-47.1.39, --gameDir, C:\Users\TheRe\Documents\ChatGPT\Repressurise\build\package-client\PressureRevisionAfter, --assetsDir, C:\Users\TheRe\.gradle\caches\forge_gradle\assets, --uuid, 445c69f5-a00a-3241-b93e-52626e52d654, --username, PressureRevisionAfter, --assetIndex, 5, --accessToken, ❄❄❄❄❄❄❄❄, --clientId, 0, --xuid, 0, --userType, legacy, --versionType, release, --width, 1280, --height, 960]
+[17:20:12] [Datafixer Bootstrap/INFO] [mojang/DataFixerBuilder]: 188 Datafixer optimizations took 609 milliseconds
+[17:20:19] [Render thread/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/C:/Users/TheRe/Documents/ChatGPT/Repressurise/build/package-client/libraries/net/minecraft/client/1.20.1-20230612.114412/client-1.20.1-20230612.114412-srg.jar%23174!/assets/.mcassetsroot' uses unexpected schema
+[17:20:19] [Render thread/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/C:/Users/TheRe/Documents/ChatGPT/Repressurise/build/package-client/libraries/net/minecraft/client/1.20.1-20230612.114412/client-1.20.1-20230612.114412-srg.jar%23174!/data/.mcassetsroot' uses unexpected schema
+[17:20:19] [Render thread/INFO] [mojang/YggdrasilAuthenticationService]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[17:20:20] [Render thread/INFO] [minecraft/Minecraft]: Setting user: PressureRevisionAfter
+[17:20:21] [Render thread/INFO] [minecraft/Minecraft]: Backend library: LWJGL version 3.3.1 build 7
+[17:20:22] [modloading-worker-0/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Forge mod loading, version 47.1.39, for MC 1.20.1 with MCP 20230612.114412
+[17:20:22] [modloading-worker-0/INFO] [ne.mi.co.MinecraftForge/FORGE]: MinecraftForge v47.1.39 Initialized
+[17:20:25] [modloading-worker-0/INFO] [me.je.li.lo.PluginCaller/]: Sending ConfigManager...
+[17:20:26] [modloading-worker-0/INFO] [me.je.li.lo.PluginCaller/]: Sending ConfigManager took 25.97 milliseconds
+[17:20:26] [modloading-worker-0/INFO] [ne.bd.li.ne.NetChannel/]: Initialized network channel 'multiblock' for mod 'bdlib'
+[17:20:26] [modloading-worker-0/INFO] [ne.bd.li.ne.NetChannel/]: Initialized network channel 'misc' for mod 'bdlib'
+================ Core construct ==================
+================ Conduits construct ==================
+[17:20:35] [Render thread/INFO] [minecraft/ReloadableResourceManager]: Reloading ResourceManager: vanilla, mod_resources
+[17:20:35] [modloading-worker-0/INFO] [ne.bd.pr.Pressure/]: Automatic fluid-transfer limit: 2147483647 mB/t from C:\Users\TheRe\Documents\ChatGPT\Repressurise\build\package-client\PressureRevisionAfter\config\pressure-common.toml. Legacy unrestricted value: 2147483647; saved settings are preserved.
+[17:20:35] [Worker-Main-8/INFO] [me.co.Mekanism/]: Version 10.4.16 initializing...
+[17:20:36] [Worker-Main-12/INFO] [minecraft/UnihexProvider]: Found unifont_all_no_pua-15.0.06.hex, loading
+[17:20:36] [Worker-Main-2/ERROR] [minecraft/ModelManager]: Failed to load model enderio:models/block/athena/advanced_capacitor_bank_part.json
+com.google.gson.JsonParseException: Model loader 'athena:athena' not found. Registered loaders: forge:empty, mekanism:transmitter, computercraft:turtle, mekanism:energy_cube, enderio:conduit, enderio:modloaded, forge:elements, forge:obj, forge:fluid_container, forge:composite, forge:separate_transforms, enderio:io_overlay, enderio:painted_block, forge:item_layers, mekanism:robit
+	at net.minecraftforge.client.model.ExtendedBlockModelDeserializer.deserializeGeometry(ExtendedBlockModelDeserializer.java:97) ~[forge-1.20.1-47.1.39-universal.jar%23179!/:?] {re:classloading}
+	at net.minecraftforge.client.model.ExtendedBlockModelDeserializer.deserialize(ExtendedBlockModelDeserializer.java:55) ~[forge-1.20.1-47.1.39-universal.jar%23179!/:?] {re:classloading}
+	at net.minecraftforge.client.model.ExtendedBlockModelDeserializer.deserialize(ExtendedBlockModelDeserializer.java:38) ~[forge-1.20.1-47.1.39-universal.jar%23179!/:?] {re:classloading}
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%2386!/:?] {}
+	at net.minecraft.util.GsonHelper.m_13780_(GsonHelper.java:524) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,re:mixin}
+	at net.minecraft.util.GsonHelper.m_263475_(GsonHelper.java:531) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,re:mixin}
+	at net.minecraft.util.GsonHelper.m_13776_(GsonHelper.java:581) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,re:mixin}
+	at net.minecraft.client.renderer.block.model.BlockModel.m_111461_(BlockModel.java:74) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.resources.model.ModelManager.m_246478_(ModelManager.java:110) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?] {}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?] {}
+[17:20:36] [Worker-Main-2/ERROR] [minecraft/ModelManager]: Failed to load model enderio:models/block/athena/basic_capacitor_bank_part.json
+com.google.gson.JsonParseException: Model loader 'athena:athena' not found. Registered loaders: forge:empty, mekanism:transmitter, computercraft:turtle, mekanism:energy_cube, enderio:conduit, enderio:modloaded, forge:elements, forge:obj, forge:fluid_container, forge:composite, forge:separate_transforms, enderio:io_overlay, enderio:painted_block, forge:item_layers, mekanism:robit
+	at net.minecraftforge.client.model.ExtendedBlockModelDeserializer.deserializeGeometry(ExtendedBlockModelDeserializer.java:97) ~[forge-1.20.1-47.1.39-universal.jar%23179!/:?] {re:classloading}
+	at net.minecraftforge.client.model.ExtendedBlockModelDeserializer.deserialize(ExtendedBlockModelDeserializer.java:55) ~[forge-1.20.1-47.1.39-universal.jar%23179!/:?] {re:classloading}
+	at net.minecraftforge.client.model.ExtendedBlockModelDeserializer.deserialize(ExtendedBlockModelDeserializer.java:38) ~[forge-1.20.1-47.1.39-universal.jar%23179!/:?] {re:classloading}
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%2386!/:?] {}
+	at net.minecraft.util.GsonHelper.m_13780_(GsonHelper.java:524) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,re:mixin}
+	at net.minecraft.util.GsonHelper.m_263475_(GsonHelper.java:531) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,re:mixin}
+	at net.minecraft.util.GsonHelper.m_13776_(GsonHelper.java:581) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,re:mixin}
+	at net.minecraft.client.renderer.block.model.BlockModel.m_111461_(BlockModel.java:74) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.resources.model.ModelManager.m_246478_(ModelManager.java:110) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?] {}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?] {}
+[17:20:36] [Worker-Main-2/ERROR] [minecraft/ModelManager]: Failed to load model enderio:models/block/athena/vibrant_capacitor_bank_part.json
+com.google.gson.JsonParseException: Model loader 'athena:athena' not found. Registered loaders: forge:empty, mekanism:transmitter, computercraft:turtle, mekanism:energy_cube, enderio:conduit, enderio:modloaded, forge:elements, forge:obj, forge:fluid_container, forge:composite, forge:separate_transforms, enderio:io_overlay, enderio:painted_block, forge:item_layers, mekanism:robit
+	at net.minecraftforge.client.model.ExtendedBlockModelDeserializer.deserializeGeometry(ExtendedBlockModelDeserializer.java:97) ~[forge-1.20.1-47.1.39-universal.jar%23179!/:?] {re:classloading}
+	at net.minecraftforge.client.model.ExtendedBlockModelDeserializer.deserialize(ExtendedBlockModelDeserializer.java:55) ~[forge-1.20.1-47.1.39-universal.jar%23179!/:?] {re:classloading}
+	at net.minecraftforge.client.model.ExtendedBlockModelDeserializer.deserialize(ExtendedBlockModelDeserializer.java:38) ~[forge-1.20.1-47.1.39-universal.jar%23179!/:?] {re:classloading}
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%2386!/:?] {}
+	at net.minecraft.util.GsonHelper.m_13780_(GsonHelper.java:524) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,re:mixin}
+	at net.minecraft.util.GsonHelper.m_263475_(GsonHelper.java:531) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,re:mixin}
+	at net.minecraft.util.GsonHelper.m_13776_(GsonHelper.java:581) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,re:mixin}
+	at net.minecraft.client.renderer.block.model.BlockModel.m_111461_(BlockModel.java:74) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.resources.model.ModelManager.m_246478_(ModelManager.java:110) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?] {}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?] {}
+[17:20:37] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [computercraft] Starting version check at https://api.modrinth.com/updates/cc-tweaked/forge_updates.json
+[17:20:37] [Worker-Main-15/WARN] [minecraft/SpriteContents]: Unused frames in sprite enderio:block/primitive_alloy_smelter_front_active: [4, 5]
+[17:20:37] [Worker-Main-11/WARN] [minecraft/SpriteContents]: Unused frames in sprite enderio:block/alloy_smelter_front_active: [4, 5]
+[17:20:37] [Worker-Main-10/WARN] [minecraft/SpriteLoader]: Texture enderio:block/item_conduit_in_out_in with size 24x24 limits mip level from 4 to 3
+[17:20:37] [Forge Version Check/WARN] [ne.mi.fm.VersionChecker/]: Failed to process update information
+java.net.ConnectException: null
+	at jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:900) ~[java.net.http:?] {}
+	at jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133) ~[java.net.http:?] {}
+	at net.minecraftforge.fml.VersionChecker$1.openUrlString(VersionChecker.java:139) ~[fmlcore-1.20.1-47.1.39.jar%23175!/:?] {}
+	at net.minecraftforge.fml.VersionChecker$1.process(VersionChecker.java:177) ~[fmlcore-1.20.1-47.1.39.jar%23175!/:?] {}
+	at java.lang.Iterable.forEach(Iterable.java:75) ~[?:?] {re:mixin}
+	at net.minecraftforge.fml.VersionChecker$1.run(VersionChecker.java:114) ~[fmlcore-1.20.1-47.1.39.jar%23175!/:?] {}
+Caused by: java.net.ConnectException
+	at jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1107) ~[java.net.http:?] {}
+	at jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:203) ~[java.net.http:?] {}
+	at jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:238) ~[java.net.http:?] {}
+	at jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:214) ~[java.net.http:?] {}
+	at java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773) ~[?:?] {}
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?] {}
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?] {}
+	at java.lang.Thread.run(Thread.java:840) ~[?:?] {}
+Caused by: java.nio.channels.ClosedChannelException
+	at sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195) ~[?:?] {}
+	at sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760) ~[?:?] {}
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848) ~[?:?] {}
+	at jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:187) ~[java.net.http:?] {}
+	at java.security.AccessController.doPrivileged(AccessController.java:569) ~[?:?] {}
+	at jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:189) ~[java.net.http:?] {}
+	at jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:238) ~[java.net.http:?] {}
+	at jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:214) ~[java.net.http:?] {}
+	at java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773) ~[?:?] {}
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?] {}
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?] {}
+	at java.lang.Thread.run(Thread.java:840) ~[?:?] {}
+[17:20:37] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[17:20:37] [Forge Version Check/WARN] [ne.mi.fm.VersionChecker/]: Failed to process update information
+java.net.ConnectException: null
+	at jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:900) ~[java.net.http:?] {}
+	at jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133) ~[java.net.http:?] {}
+	at net.minecraftforge.fml.VersionChecker$1.openUrlString(VersionChecker.java:139) ~[fmlcore-1.20.1-47.1.39.jar%23175!/:?] {}
+	at net.minecraftforge.fml.VersionChecker$1.process(VersionChecker.java:177) ~[fmlcore-1.20.1-47.1.39.jar%23175!/:?] {}
+	at java.lang.Iterable.forEach(Iterable.java:75) ~[?:?] {re:mixin}
+	at net.minecraftforge.fml.VersionChecker$1.run(VersionChecker.java:114) ~[fmlcore-1.20.1-47.1.39.jar%23175!/:?] {}
+Caused by: java.net.ConnectException
+	at jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1107) ~[java.net.http:?] {}
+	at jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:203) ~[java.net.http:?] {}
+	at jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:238) ~[java.net.http:?] {}
+	at jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:214) ~[java.net.http:?] {}
+	at java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773) ~[?:?] {}
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?] {}
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?] {}
+	at java.lang.Thread.run(Thread.java:840) ~[?:?] {}
+Caused by: java.nio.channels.ClosedChannelException
+	at sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195) ~[?:?] {}
+	at sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760) ~[?:?] {}
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848) ~[?:?] {}
+	at jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:187) ~[java.net.http:?] {}
+	at java.security.AccessController.doPrivileged(AccessController.java:569) ~[?:?] {}
+	at jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:189) ~[java.net.http:?] {}
+	at jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:238) ~[java.net.http:?] {}
+	at jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:214) ~[java.net.http:?] {}
+	at java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773) ~[?:?] {}
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?] {}
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?] {}
+	at java.lang.Thread.run(Thread.java:840) ~[?:?] {}
+[17:20:38] [Worker-Main-8/INFO] [me.co.Mekanism/]: Fake player readout: UUID = 46e82cd0-d480-3d48-800a-77431ede078e, name = [Mekanism]
+[17:20:38] [Worker-Main-8/INFO] [me.co.Mekanism/]: Mod loaded.
+[17:20:39] [Render thread/WARN] [ne.mi.fm.DeferredWorkQueue/LOADING]: Mod 'mekanism' took 1.050 s to run a deferred task.
+[17:20:40] [Worker-Main-10/INFO] [me.co.Mekanism/]: Initialized HolidayManager.
+[17:20:44] [Worker-Main-6/WARN] [minecraft/ModelManager]: Missing textures in model enderio:ender_fluid_conduit#inventory:
+    minecraft:textures/atlas/blocks.png:enderio:block/conduit/power1
+[17:20:45] [Worker-Main-6/WARN] [minecraft/ModelManager]: Missing textures in model enderio:pressurized_fluid_conduit#inventory:
+    minecraft:textures/atlas/blocks.png:enderio:block/conduit/power1
+[17:20:45] [Worker-Main-6/WARN] [minecraft/ModelManager]: Missing textures in model enderio:pressurized_chemical_conduit#inventory:
+    minecraft:textures/atlas/blocks.png:enderio:block/conduit/power1
+[17:20:45] [Worker-Main-6/WARN] [minecraft/ModelManager]: Missing textures in model enderio:chemical_conduit#inventory:
+    minecraft:textures/atlas/blocks.png:enderio:block/conduit/power1
+[17:20:45] [Worker-Main-6/WARN] [minecraft/ModelManager]: Missing textures in model enderio:redstone_conduit#inventory:
+    minecraft:textures/atlas/blocks.png:enderio:block/conduit/power1
+[17:20:45] [Worker-Main-6/WARN] [minecraft/ModelManager]: Missing textures in model enderio:heat_conduit#inventory:
+    minecraft:textures/atlas/blocks.png:enderio:block/conduit/power1
+[17:20:45] [Worker-Main-6/WARN] [minecraft/ModelManager]: Missing textures in model enderio:item_conduit#inventory:
+    minecraft:textures/atlas/blocks.png:enderio:block/conduit/power1
+[17:20:45] [Worker-Main-6/WARN] [minecraft/ModelManager]: Missing textures in model enderio:energy_conduit#inventory:
+    minecraft:textures/atlas/blocks.png:enderio:block/conduit/power1
+[17:20:45] [Worker-Main-6/WARN] [minecraft/ModelManager]: Missing textures in model enderio:ender_chemical_conduit#inventory:
+    minecraft:textures/atlas/blocks.png:enderio:block/conduit/power1
+[17:20:45] [Worker-Main-6/WARN] [minecraft/ModelManager]: Missing textures in model enderio:fluid_conduit#inventory:
+    minecraft:textures/atlas/blocks.png:enderio:block/conduit/power1
+[17:20:45] [Worker-Main-8/INFO] [Jade/]: Start loading plugin at snownee.jade.addon.vanilla.VanillaPlugin
+[17:20:45] [Worker-Main-8/INFO] [Jade/]: Start loading plugin at snownee.jade.addon.universal.UniversalPlugin
+[17:20:45] [Worker-Main-8/INFO] [Jade/]: Start loading plugin at snownee.jade.addon.core.CorePlugin
+[17:20:45] [Worker-Main-8/INFO] [Jade/]: Start loading plugin at net.bdew.pressure.compat.PressureJadePlugin
+[17:20:45] [Worker-Main-8/INFO] [Jade/]: Start loading plugin at mekanism.common.integration.lookingat.jade.MekanismJadePlugin
+[17:20:50] [Render thread/WARN] [minecraft/SoundEngine]: Missing sound for event: minecraft:item.goat_horn.play
+[17:20:50] [Render thread/WARN] [minecraft/SoundEngine]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[17:20:50] [Render thread/ERROR] [minecraft/SoundEngine]: Error starting SoundSystem. Turning off sounds & music
+java.lang.IllegalStateException: Failed to open OpenAL device
+	at com.mojang.blaze3d.audio.Library.m_193472_(Library.java:283) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading}
+	at com.mojang.blaze3d.audio.Library.m_231084_(Library.java:153) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading}
+	at net.minecraft.client.sounds.SoundEngine.m_120323_(SoundEngine.java:104) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.sounds.SoundEngine.m_120239_(SoundEngine.java:96) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.sounds.SoundManager.m_5787_(SoundManager.java:125) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.sounds.SoundManager.m_5787_(SoundManager.java:40) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.packs.resources.SimplePreparableReloadListener.m_10789_(SimplePreparableReloadListener.java:13) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,re:mixin}
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?] {}
+	at net.minecraft.server.packs.resources.SimpleReloadInstance.m_143940_(SimpleReloadInstance.java:69) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading}
+	at net.minecraft.util.thread.BlockableEventLoop.m_6367_(BlockableEventLoop.java:156) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.m_6367_(ReentrantBlockableEventLoop.java:23) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading}
+	at net.minecraft.util.thread.BlockableEventLoop.m_7245_(BlockableEventLoop.java:130) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.util.thread.BlockableEventLoop.m_18699_(BlockableEventLoop.java:115) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.Minecraft.m_91383_(Minecraft.java:1106) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.m_91374_(Minecraft.java:718) ~[client-1.20.1-20230612.114412-srg.jar%23174!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:218) ~[1.20.1.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.1.39.jar:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:99) ~[fmlloader-1.20.1-47.1.39.jar:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonClientLaunchHandler.lambda$makeService$0(CommonClientLaunchHandler.java:25) ~[fmlloader-1.20.1-47.1.39.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?] {}
+[17:20:50] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 2048x1024x4 minecraft:textures/atlas/blocks.png-atlas
+[17:20:50] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[17:20:50] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[17:20:50] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[17:20:50] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[17:20:50] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[17:20:50] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[17:20:50] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[17:20:50] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[17:20:51] [Render thread/WARN] [minecraft/ShaderInstance]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[17:20:51] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[17:20:51] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[17:20:51] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[17:20:51] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 128x128x0 computercraft:textures/atlas/gui.png-atlas
+[17:20:51] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 128x128x0 enderio:textures/atlas/conduit_icons.png-atlas
+[17:20:51] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 256x256x0 jei:textures/atlas/gui.png-atlas
+[17:20:51] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 512x256x0 mekanism:textures/atlas/robit.png-atlas
+[17:20:52] [Realms Notification Availability checker #1/INFO] [mojang/RealmsClient]: Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: 0
+[17:21:00] [Render thread/INFO] [minecraft/RecipeManager]: Skipping loading recipe enderio:ae_covered_dense_cable as it's serializer returned null
+[17:21:00] [Render thread/INFO] [minecraft/RecipeManager]: Skipping loading recipe enderio:ae_covered_cable as it's serializer returned null
+[17:21:00] [Render thread/INFO] [minecraft/RecipeManager]: Skipping loading recipe enderio:rs_cable as it's serializer returned null
+[17:21:00] [Render thread/INFO] [minecraft/RecipeManager]: Skipping loading recipe enderio:ae_glass_cable as it's serializer returned null
+[17:21:00] [Render thread/INFO] [minecraft/RecipeManager]: Loaded 42 recipes
+[17:21:01] [Render thread/INFO] [minecraft/AdvancementList]: Loaded 2364 advancements
+[17:21:01] [Render thread/INFO] [da.co.im.UpgradeManager/]: Loaded 9 turtle upgrades
+[17:21:01] [Render thread/INFO] [da.co.im.UpgradeManager/]: Loaded 3 pocket computer upgrades
+[17:21:01] [Render thread/INFO] [enderio/]: Data loader for eio_soul/spawner loaded 73 jsons
+[17:21:01] [Render thread/INFO] [enderio/]: Data loader for eio_soul/engine loaded 5 jsons
+[17:21:02] [Server thread/INFO] [minecraft/IntegratedServer]: Starting integrated minecraft server version 1.20.1
+[17:21:02] [Server thread/INFO] [minecraft/MinecraftServer]: Generating keypair
+[17:21:04] [Server thread/INFO] [minecraft/MinecraftServer]: Preparing start region for dimension minecraft:overworld
+[17:21:09] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:21:09] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:21:09] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:21:09] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:21:09] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:21:09] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:21:09] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:21:09] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:21:09] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:21:09] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:21:09] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:21:10] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[17:21:10] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 5%
+[17:21:11] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 5%
+[17:21:11] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 75%
+[17:21:11] [Server thread/INFO] [ne.mi.se.pe.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
+[17:21:11] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Time elapsed: 7352 ms
+[17:21:12] [Server thread/INFO] [minecraft/IntegratedServer]: Changing view distance to 12, from 10
+[17:21:12] [Server thread/INFO] [minecraft/IntegratedServer]: Changing simulation distance to 12, from 0
+[17:21:12] [Render thread/WARN] [io.ne.ut.in.SystemPropertyUtil/]: Unable to parse the boolean system property 'java.net.preferIPv6Addresses':system - using the default value: false
+[17:21:16] [Netty Local Client IO #0/INFO] [ne.mi.ne.NetworkHooks/]: Connected to a modded server.
+[17:21:16] [Server thread/INFO] [minecraft/PlayerList]: PressureRevisionAfter[local:E:8f254802] logged in with entity id 23 at (2.0, 82.0, 8.0)
+[17:21:17] [Server thread/INFO] [minecraft/MinecraftServer]: PressureRevisionAfter joined the game
+[17:21:17] [Server thread/INFO] [Jade/]: Syncing config to PressureRevisionAfter (445c69f5-a00a-3241-b93e-52626e52d654)
+[17:21:20] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Starting JEI...
+[17:21:20] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Configuring JEI...
+[17:21:20] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Configuring JEI took 6.092 milliseconds
+[17:21:20] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering item subtypes...
+[17:21:20] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering item subtypes: jei:minecraft took 32.16 milliseconds
+[17:21:20] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering item subtypes: mekanism:jei_plugin took 16.15 milliseconds
+[17:21:20] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering item subtypes took 60.71 milliseconds
+[17:21:20] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering fluid subtypes...
+[17:21:20] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering fluid subtypes took 1.963 milliseconds
+[17:21:20] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering ingredients...
+[17:21:21] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering ingredients: jei:minecraft took 1.345 seconds
+[17:21:21] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering ingredients: mekanism:jei_plugin took 19.11 milliseconds
+[17:21:21] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering ingredients took 1.369 seconds
+[17:21:21] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering extra ingredients...
+[17:21:21] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering extra ingredients took 2.343 milliseconds
+[17:21:21] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering search ingredient aliases...
+[17:21:21] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering search ingredient aliases took 1.955 milliseconds
+[17:21:21] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering Mod Info...
+[17:21:21] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering Mod Info took 2.388 milliseconds
+[17:21:22] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering categories...
+[17:21:22] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering categories: jei:minecraft took 218.3 milliseconds
+[17:21:22] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering categories: enderio:machines took 127.4 milliseconds
+[17:21:22] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering categories: enderio:base took 12.48 milliseconds
+[17:21:22] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering categories: mekanism:jei_plugin took 262.1 milliseconds
+[17:21:22] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering categories: jei:internal took 36.10 milliseconds
+[17:21:22] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering categories took 664.5 milliseconds
+[17:21:22] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering vanilla category extensions...
+[17:21:22] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering vanilla category extensions: jei:minecraft took 37.97 milliseconds
+[17:21:22] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering vanilla category extensions took 48.48 milliseconds
+[17:21:22] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering recipe catalysts...
+[17:21:22] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering recipe catalysts: jei:minecraft took 29.86 milliseconds
+[17:21:22] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering recipe catalysts: mekanism:jei_plugin took 16.36 milliseconds
+[17:21:22] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering recipe catalysts took 50.94 milliseconds
+[17:21:22] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Building recipe registry...
+[17:21:23] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Building recipe registry took 204.0 milliseconds
+[17:21:23] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering advanced plugins...
+[17:21:23] [Render thread/INFO] [me.je.li.lo.re.AdvancedRegistration/]: Added typed recipe manager plugin: class mezz.jei.library.plugins.vanilla.crafting.FireworkStarRecipeManagerPlugin
+[17:21:23] [Render thread/INFO] [me.je.li.lo.re.AdvancedRegistration/]: Added typed recipe manager plugin: class mezz.jei.library.plugins.vanilla.crafting.FireworkRocketRecipeManagerPlugin
+[17:21:23] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering advanced plugins: jei:minecraft took 30.81 milliseconds
+[17:21:23] [Render thread/INFO] [me.je.li.lo.re.AdvancedRegistration/]: Added recipe manager plugin: class dan200.computercraft.client.integration.jei.RecipeResolver
+[17:21:23] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering advanced plugins: computercraft:jei took 11.37 milliseconds
+[17:21:23] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering advanced plugins took 45.94 milliseconds
+[17:21:23] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering recipes...
+[17:21:27] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering recipes: jei:minecraft took 3.902 seconds
+[17:21:27] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering recipes: enderio:machines took 153.8 milliseconds
+[17:21:27] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering recipes: enderio:base took 28.75 milliseconds
+[17:21:27] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering recipes: mekanism:jei_plugin took 247.3 milliseconds
+[17:21:27] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering recipes: jei:internal took 347.1 milliseconds
+[17:21:27] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering recipes took 4.687 seconds
+[17:21:27] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering recipes transfer handlers...
+[17:21:27] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering recipes transfer handlers: jei:minecraft took 41.89 milliseconds
+[17:21:27] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering recipes transfer handlers: mekanism:jei_plugin took 33.28 milliseconds
+[17:21:27] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering recipes transfer handlers took 87.04 milliseconds
+[17:21:28] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Building runtime...
+[17:21:28] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering gui handlers...
+[17:21:28] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering gui handlers: jei:minecraft took 27.99 milliseconds
+[17:21:28] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering gui handlers: jei:gui took 76.73 milliseconds
+[17:21:28] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering gui handlers: mekanism:jei_plugin took 16.76 milliseconds
+[17:21:28] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering gui handlers took 137.6 milliseconds
+[17:21:28] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering advanced search...
+[17:21:28] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering advanced search took 2.120 milliseconds
+[17:21:28] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering Runtime...
+[17:21:28] [Render thread/INFO] [me.je.gu.st.JeiGuiStarter/]: Starting JEI GUI
+[17:21:28] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Building ingredient list...
+[17:21:28] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Building ingredient list took 436.5 milliseconds
+[17:21:28] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Building ingredient filter...
+[17:21:30] [Render thread/INFO] [me.je.gu.in.IngredientFilter/]: Adding 3378 ingredients
+[17:21:30] [Render thread/INFO] [me.je.gu.in.IngredientFilter/]: Added 3378 ingredients
+[17:21:30] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Building ingredient filter took 1.806 seconds
+[17:21:31] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering Runtime: jei:forge_gui took 3.291 seconds
+[17:21:31] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering Runtime took 3.294 seconds
+[17:21:31] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Building runtime took 3.587 seconds
+[17:21:31] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Sending Runtime...
+[17:21:31] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Sending Runtime: computercraft:jei took 11.67 milliseconds
+[17:21:31] [Render thread/INFO] [me.je.li.in.IngredientManager/]: Ingredients are being removed at runtime: 30 net.minecraft.world.item.ItemStack
+[17:21:31] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Sending Runtime: pressure:jei took 34.77 milliseconds
+[17:21:31] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Sending Runtime took 50.43 milliseconds
+[17:21:31] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Starting JEI took 11.45 seconds
+[17:21:32] [Render thread/INFO] [Jade/]: Received config from the server: 
+[17:21:32] [Render thread/INFO] [minecraft/AdvancementList]: Loaded 17 advancements
+PRESSURE_MODELS_QA_PASSED states=512 items=35
+PRESSURE_REVISION_SCREENSHOT r4-00-empty-south-day-ao.png
+PRESSURE_REVISION_SCREENSHOT r4-01-empty-north-day-ao.png
+PRESSURE_REVISION_SCREENSHOT r4-02-empty-east-day-ao.png
+PRESSURE_REVISION_SCREENSHOT r4-03-empty-west-day-ao.png
+PRESSURE_REVISION_SCREENSHOT r4-04-partial-south-day-ao.png
+PRESSURE_REVISION_SCREENSHOT r4-05-partial-north-day-ao.png
+PRESSURE_REVISION_SCREENSHOT r4-06-partial-east-day-ao.png
+PRESSURE_REVISION_SCREENSHOT r4-07-partial-west-day-ao.png
+PRESSURE_REVISION_SCREENSHOT r4-08-full-south-day-ao.png
+PRESSURE_REVISION_SCREENSHOT r4-09-full-north-day-ao.png
+PRESSURE_REVISION_SCREENSHOT r4-10-full-east-day-ao.png
+PRESSURE_REVISION_SCREENSHOT r4-11-full-west-day-ao.png
+PRESSURE_REVISION_SCREENSHOT r4-12-partial-day-no-ao.png
+PRESSURE_REVISION_SCREENSHOT r4-13-partial-night-artificial-ao.png
+PRESSURE_REVISION_SCREENSHOT r4-14-empty-night-artificial-ao.png
+PRESSURE_REVISION_SCREENSHOT r4-15-full-night-artificial-ao.png
+PRESSURE_REVISION_SCREENSHOT r4-16-controller-removed.png
+PRESSURE_REVISION_SCREENSHOT r4-17-controller-restored.png
+PRESSURE_REVISION_SCREENSHOT r4-18-single-column-empty.png
+PRESSURE_REVISION_SCREENSHOT r4-19-single-column-partial.png
+PRESSURE_REVISION_SCREENSHOT r4-20-single-column-full.png
+PRESSURE_REVISION_SCREENSHOT r7-scale1-outputs0.png
+PRESSURE_REVISION_SCREENSHOT r7-scale1-outputs2.png
+PRESSURE_REVISION_SCREENSHOT r7-scale1-outputs6.png
+PRESSURE_REVISION_SCREENSHOT r7-scale2-outputs0.png
+PRESSURE_REVISION_SCREENSHOT r7-scale2-outputs2.png
+PRESSURE_REVISION_SCREENSHOT r7-scale2-outputs6.png
+PRESSURE_REVISION_SCREENSHOT r7-scale3-outputs0.png
+PRESSURE_REVISION_SCREENSHOT r7-scale3-outputs2.png
+PRESSURE_REVISION_SCREENSHOT r7-scale3-outputs6.png
+PRESSURE_REVISION_SCREENSHOT r7-scale4-outputs0.png
+PRESSURE_REVISION_SCREENSHOT r7-scale4-outputs2.png
+PRESSURE_REVISION_SCREENSHOT r7-scale4-outputs6.png
+PRESSURE_REVISION_SCREENSHOT r7-six-buttons-clicked.png
+PRESSURE_JEI_QA_PASSED canisters=1 filled=0
+PRESSURE_REVISION_VISUAL_QA_PASSED baseline=false
+[17:23:35] [Render thread/INFO] [me.je.li.st.JeiStarter/]: Stopping JEI
+[17:23:35] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Sending Runtime Unavailable...
+[17:23:35] [Render thread/INFO] [me.je.fo.pl.fo.ForgeGuiPlugin/]: Stopping JEI GUI
+[17:23:35] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Sending Runtime Unavailable took 6.506 milliseconds
+[17:23:35] [Render thread/INFO] [minecraft/Minecraft]: Stopping!
+[17:23:35] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: PressureRevisionAfter lost connection: Disconnected
+[17:23:35] [Server thread/INFO] [minecraft/MinecraftServer]: PressureRevisionAfter left the game
+[17:23:35] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: Stopping singleplayer server as player logged out
+[17:23:35] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[17:23:35] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players
+[17:23:35] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds
+[17:23:36] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[17:23:37] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[17:23:37] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[17:23:37] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (Migration QA): All chunks are saved
+[17:23:37] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[17:23:37] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[17:23:37] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved

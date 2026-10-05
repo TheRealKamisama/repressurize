@@ -16,7 +16,7 @@
       "item": "pressure:tank_wall"
     },
     "A": {
-      "tag": "mekanism:alloys/advanced"
+      "tag": "forge:alloys/advanced"
     }
   },
   "result": {

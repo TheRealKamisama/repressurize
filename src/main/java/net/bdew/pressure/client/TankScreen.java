@@ -17,6 +17,9 @@ public final class TankScreen extends AbstractContainerScreen<TankMenu> {
     private static final ResourceLocation BACKGROUND = new ResourceLocation("pressure", "textures/gui/tank.png");
     private static final int[] COLORS = {0xFFD84B4B, 0xFF4BD84B, 0xFF4B6BD8, 0xFFD8D84B, 0xFF4BD8D8, 0xFFC04BD8};
     private final Button[] modes = new Button[6];
+    // The texture's 18-pixel slot borders start at (43,42); (44,43) is the item inset.
+    private static final int OUTPUT_X = 43, OUTPUT_Y = 42, OUTPUT_SIZE = 18, OUTPUT_PITCH = 21, BUTTON_Y = 63;
+    private static int outputX(int slot) { return OUTPUT_X + OUTPUT_PITCH * slot; }
 
     public TankScreen(TankMenu menu, Inventory inventory, Component title) { super(menu, inventory, title); }
 
@@ -30,7 +33,7 @@ public final class TankScreen extends AbstractContainerScreen<TankMenu> {
             final int slot = i;
             modes[i] = addRenderableWidget(Button.builder(Component.empty(), button -> {
                 if (minecraft.gameMode != null) minecraft.gameMode.handleInventoryButtonClick(menu.containerId, slot);
-            }).bounds(leftPos + 44 + 21 * i, topPos + 63, 18, 16).build());
+            }).bounds(leftPos + outputX(i), topPos + BUTTON_Y, OUTPUT_SIZE, OUTPUT_SIZE).build());
         }
     }
 
@@ -54,13 +57,13 @@ public final class TankScreen extends AbstractContainerScreen<TankMenu> {
         var filter = menu.controller.getFluidFilter();
         if (filter != null) FluidGauge.draw(graphics, new FluidStack(filter, 1000), leftPos + 149, topPos + 19, 16, 16);
         for (int i = 0; i < 6; i++) {
-            int x = leftPos + 44 + 21 * i;
-            graphics.fill(x, topPos + 43, x + 18, topPos + 61, COLORS[i]);
-            graphics.fill(x + 1, topPos + 44, x + 17, topPos + 60, 0xFF303030);
+            int x = leftPos + outputX(i), y = topPos + OUTPUT_Y;
+            graphics.fill(x, y, x + OUTPUT_SIZE, y + OUTPUT_SIZE, COLORS[i]);
+            graphics.fill(x + 1, y + 1, x + OUTPUT_SIZE - 1, y + OUTPUT_SIZE - 1, 0xFF303030);
             var output = menu.controller.getOutput(i);
-            if (output == null) graphics.drawCenteredString(font, "×", x + 9, topPos + 47, COLORS[i]);
+            if (output == null) graphics.drawCenteredString(font, "×", x + 9, y + 4, COLORS[i]);
             else if (minecraft.level != null) graphics.renderItem(minecraft.level.getBlockState(output.pos.relative(output.side))
-                    .getBlock().asItem().getDefaultInstance(), x + 1, topPos + 44);
+                    .getBlock().asItem().getDefaultInstance(), x + 1, y + 1);
         }
     }
 
@@ -79,7 +82,8 @@ public final class TankScreen extends AbstractContainerScreen<TankMenu> {
                     : Component.translatable("pressure.gui.tank.filter", new FluidStack(filter, 1).getDisplayName()));
             tip.add(Component.translatable("pressure.gui.tank.filter.tip1"));
             tip.add(Component.translatable("pressure.gui.tank.filter.tip2"));
-        } else for (int i = 0; i < 6; i++) if (isHovering(44 + i * 21, 43, 18, 36, mouseX, mouseY)) {
+        } else for (int i = 0; i < 6; i++) if (isHovering(outputX(i), OUTPUT_Y, OUTPUT_SIZE, OUTPUT_SIZE, mouseX, mouseY)
+                || modes[i].visible && isHovering(outputX(i), BUTTON_Y, OUTPUT_SIZE, OUTPUT_SIZE, mouseX, mouseY)) {
             tip.add(Component.translatable("pressure.output." + i));
             var output = menu.controller.getOutput(i);
             if (output == null) tip.add(Component.translatable("bdlib.multiblock.disabled"));

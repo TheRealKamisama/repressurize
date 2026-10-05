@@ -1,0 +1,8 @@
+{
+  "pumpFacing": "north",
+  "sixOutputs": "RS_OFF",
+  "waterBuckets": 1,
+  "offhandEmptyBuckets": 2,
+  "filter": "minecraft:water",
+  "passed": true
+}

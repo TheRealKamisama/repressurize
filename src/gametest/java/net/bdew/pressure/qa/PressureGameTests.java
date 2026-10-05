@@ -167,7 +167,7 @@ public final class PressureGameTests {
             var ingredients=recipe.getIngredients();
             for(int i=0;i<ingredients.size();i++) {
                 var ingredient=ingredients.get(i);
-                if(!ingredient.isEmpty()) {
+                if(ingredient != net.minecraft.world.item.crafting.Ingredient.EMPTY) {
                     helper.assertTrue(ingredient.getItems().length>0,"Recipe has unresolved ingredient: "+recipe.getId());
                     grid.setItem(i/width*3+i%width,ingredient.getItems()[0].copy());
                 }

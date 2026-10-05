@@ -74,11 +74,13 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-1.20.1-forge-api:${config.jei.version}")
     compileOnly fg.deobf("maven.modrinth:jade:${config.jade.version}")
     compileOnly fg.deobf("mekanism:Mekanism:${config.mekanism.version}:api")
+    compileOnly fg.deobf("maven.modrinth:cc-tweaked:${config.computercraft.artifact}")
     if (project.hasProperty('compatTest')) {
         runtimeOnly fg.deobf("mezz.jei:jei-1.20.1-forge:${config.jei.version}")
         runtimeOnly fg.deobf("maven.modrinth:jade:${config.jade.version}")
         runtimeOnly fg.deobf("mekanism:Mekanism:${config.mekanism.version}")
         runtimeOnly fg.deobf("maven.modrinth:enderio:${config.enderio.version}")
+        runtimeOnly fg.deobf("maven.modrinth:cc-tweaked:${config.computercraft.artifact}")
     }
 }
 
@@ -129,6 +131,7 @@ if (project.hasProperty('compatTest')) {
 
 tasks.withType(JavaCompile).configureEach {
     options.release = 17
+    options.encoding = 'UTF-8'
 }
 
 tasks.withType(ScalaCompile).configureEach {

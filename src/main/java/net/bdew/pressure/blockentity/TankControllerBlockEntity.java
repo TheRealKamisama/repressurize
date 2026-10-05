@@ -101,7 +101,13 @@ public final class TankControllerBlockEntity extends PressureNodeBlockEntity {
     }
     public void cycleOutputMode(int slot) {
         Output output = getOutput(slot);
-        if (output != null) { output.mode = output.mode.next(); changed(); }
+        if (output != null) setOutputMode(slot, output.mode.next());
+    }
+    public boolean setOutputMode(int slot, RouterRedstoneMode mode) {
+        Output output = getOutput(slot);
+        if (output == null || mode == null) return false;
+        if (output.mode != mode) { output.mode = mode; changed(); }
+        return true;
     }
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, TankControllerBlockEntity entity) {

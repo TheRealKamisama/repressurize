@@ -13,7 +13,7 @@
       "item": "pressure:interface"
     },
     "A": {
-      "tag": "mekanism:alloys/advanced"
+      "tag": "forge:alloys/advanced"
     }
   },
   "result": {

@@ -4,99 +4,67 @@
 
 ## Current status
 
-The Minecraft 1.20.1 / Forge migration has substantial implementation and historical runtime verification. The original seven regressions and full tank GUI have implementations. The user's October 5 revision adds eight open requirements, reopens affected acceptance checks, and replaces OpenComputers with **CC: Tweaked**. [MIGRATION_STATUS.md](MIGRATION_STATUS.md) is the revised goal specification and completion checklist. **Do not call the migration complete.**
+All eight October 5 requirements **R1–R8 are implemented/diagnosed and verified within the requested scope**. The restored tank GUI and earlier seven fixes remain intact. The user explicitly requested that **all audio checks be deferred to their own personal testing**; no audible verification is claimed. No required code, integration, gameplay or packaging blocker remains for this pass. This is a tested development build, not a published release.
 
-The October 3 command results, runtime scope, images and former blocker evidence remain in [VERIFICATION_2026-10-03.md](VERIFICATION_2026-10-03.md). Two-client placement/menu synchronization, actual chunk unload/reload, inspected rendering and dedicated restart passed on that JAR. Those checks do not establish acceptance of the new reports. No code fixes, new build or runtime verification were performed in this documentation revision.
+[MIGRATION_STATUS.md](MIGRATION_STATUS.md) is the authoritative checklist. [VERIFICATION_2026-10-05.md](VERIFICATION_2026-10-05.md) records current commands, versions, results, failed attempts and their resolutions. October 3 evidence remains historical in [VERIFICATION_2026-10-03.md](VERIFICATION_2026-10-03.md); it was not reused as acceptance of the new reports.
 
-## October 5 requirements and next work
+## October 5 results
 
-All items are **open**; use the detailed R1–R8 investigation and acceptance sections in the migration checklist. Mark code changes **implemented but unverified**, then **verified** only after the corresponding checks pass. Record concrete blockers and continue independent work.
-
-| ID | Required change / preservation boundary |
+| ID | Verified result |
 |---|---|
-| R1 | Shift placement reverses orientation only for blocks with input/output sides, including High Pressure Pump and High Pressure Input/Output. Preserve unrelated directional placement. |
-| R2 | Right-click Infinite Water Source with an empty bucket fills it; verify stacked/offhand/survival/creative inventory behavior. |
-| R3 | Implement optional CC: Tweaked tank data-port and pipe-sensor peripherals equivalent to all legacy computer commands. OpenComputers is no longer required. |
-| R4 | Fix connected Tank Indicator darkening, preserving correct standalone lighting, frames and gauge. Ambient light/AO is an unconfirmed hypothesis. |
-| R5 | Repair all four Mekanism gas-block recipes showing `Empty Tag: mekanism:alloys/advanced`; inspect actual installed tags and test JEI plus crafting. |
-| R6 | Measure and restore near-infinite High Pressure Pump/Input throughput. Source default is already `Integer.MAX_VALUE`; investigate effective config and endpoint/intermediate limits rather than assuming the cause. |
-| R7 | Align all six tank output widgets, buttons and hit regions at multiple GUI scales; preserve full menu functionality and synchronization. |
-| R8 | Restore the reported Tank Fluid Output's active push behavior. Preserve existing redstone rules, which the user confirms work correctly with an externally pulling pipe. |
+| R1 | Explicit flow-placement opt-in reverses pump, pressure input/output, sluice, check valve, pipe sensor and Mekanism pressure gas machines while Shift is held. Other directional blocks and all-face tank modules retain normal placement. Six-direction placement/serialization/transfers, actual dedicated-client placement and saved restart pass. |
+| R2 | Infinite Water Source fills buckets on the server. Survival/creative, both hands, singles/stacks and full inventories pass. A real survival client fills one bucket from three in its offhand; authoritative inventory and restart are checked. |
+| R3 | Optional CC: Tweaked **1.120.2 Forge** implements the complete `pp_tank` / `pp_sensor` contract. Actual Lua tests all commands, errors, counters/averages, disassembly/reassembly and detach/reconnect. Both peers see authoritative six-output/filter mutations; saved computer/sensor restart passes. Base server starts without CC. |
+| R4 | Connected indicator textures use the baked world-lighting/AO pipeline; the redundant opaque block-entity face is removed. Gauges use exposed-face lighting/directional shade with emission retained. Empty/partial/full single/multiple-height, exposed sides, daylight/artificial, AO settings and controller removal/reassembly pass. Both peers inspect post-restart surfaces/gauges. |
+| R5 | All four gas recipes use installed `forge:alloys/advanced`, resolving to `mekanism:alloy_infused` in 10.4.16.80. Actual survival crafting consumes it; all four fresh JEI views are correct. Loading without Mekanism is clean. |
+| R6 | Pump, input and their combined route each move **2,147,483,647 mB in one tick** with unrestricted finite source/sink handlers and conserve fluid. Explicit 4000 caps yield 4000. Saved configurations retain their values; startup logs the effective cap and path. |
+| R7 | Borders start at `(43 + 21*i,42)`, icons at `(44 + 21*i,43)`; buttons/hover bounds align. Zero/two/six channels at scales 1–4, six edge clicks, six tooltips at scales 2/4, peer updates and saved modes pass. Full container/filter/gauge/inventory/shift-click functionality is preserved. |
+| R8 | Ordinary `tank_fluid_output` actively pushes, as requested, through the existing automatic variant's `canOutput` gate. Legacy ordinary output was passive; this intentional extension is documented. Both variants, every face/mode, signal on/off, partial/full/no receiver, pull simulation/execution, conservation and counters pass. Working external-pull semantics are preserved. |
 
-The three screenshots were inspected and preserved in [evidence/2026-10-05/](evidence/2026-10-05/README.md). They are user evidence, not a fresh-client check of the checked-out implementation; their artifact/dependency configuration is not established.
+CC: Tweaked replaces OpenComputers as the required target. The old Scala integration and former dependency-blocker evidence remain references. Lua registry names are namespaced; the complete return/argument contract is in [COMPUTERCRAFT.md](COMPUTERCRAFT.md).
 
-For R8, distinguish registry variants during reproduction: legacy `FluidOutput.scala` has an empty `doOutput`, while `FluidAutoOutput.scala` actively pushes; active code ticks `tank_fluid_output_auto` but excludes `tank_fluid_output`. Reconcile that distinction with the reported 1.12.2 behavior without dropping the requested active-output result or changing working redstone semantics.
-
-Continue with reproduction/configuration checks, recipe/throughput/output fixes, restricted placement/bucket features, indicator/GUI fixes and complete CC: Tweaked integration. Preserve earlier fixes, then rerun revised server/gameplay, fresh-client, multiplayer/persistence and final packaging acceptance. All downloads must use `http://localhost:7897`.
-
-## Working tree and delivery
+## Artifact and delivery
 
 - Repository: `C:\Users\TheRe\Documents\ChatGPT\Repressurise`.
-- Branch remains `codex/pressure-pipes-1.20.1`. The user authorized committing and pushing the current migration checkpoint on October 5. This checkpoint preserves the open R1–R8 requirements and historical verification boundaries; it is not a completed migration or release.
-- Active Java is under `src/main/java/`; runtime resources are under `resources/`; `legacy-src/` remains the 1.12.2 correctness reference and is not compiled.
-- The pre-edit source/resources/docs snapshot is `build/migration-evidence/baseline-2026-10-02.zip`. A comparison against that snapshot is recorded in `docs/evidence/2026-10-03/change-review.txt`.
+- Branch: `codex/pressure-pipes-1.20.1`. The user requested commit and push of this verified migration follow-up on October 5; this commit includes the implementation and evidence. No release was published. Initial Git status contained only untracked `forge-installer.jar.log`, which is preserved outside the commit.
+- Final JAR: [pressure-2.0.0-DEV-mc1.20.1.jar](../build/libs/pressure-2.0.0-DEV-mc1.20.1.jar).
+- SHA-256: `5A72E5C98ED9E3ADCB1726B3A013442FD7B11C00720604CAD2130B0B87D49CF3`.
+- Server and clients used this exact tested hash. Later builds vary only the manifest timestamp; all 477 file-entry names and production class/asset/recipe/mod-metadata bytes match. The timestamp variant is archived and the tested candidate restored to `build/libs/`; see [artifact comparison](evidence/2026-10-05/artifact-content-comparison.json).
+- `build/qa/pressure-qa.jar` is a separate test fixture. **Do not distribute it.** Main JAR has no QA classes/test structures.
+- Active code is `src/main/java/`, assets are `resources/`; `legacy-src/` is uncompiled. The earlier snapshot `build/migration-evidence/baseline-2026-10-02.zip` and October 3 evidence remain preserved. This pass archives the original JAR as `build/migration-evidence/2026-10-05/baseline-pressure.jar`.
 - Every future project commit must include `Co-authored-by: Codex <codex@openai.com>`.
 
-Last verified production artifact (October 3; does not include the new requirements): [pressure-2.0.0-DEV-mc1.20.1.jar](../build/libs/pressure-2.0.0-DEV-mc1.20.1.jar).
+## Tested environment and commands
 
-SHA-256: `AD22061E73032F48CA8126D4905A150EF785FC659A301E21547E077969358139`.
-
-This JAR was built with `gradlew.bat --offline build qaJar` (55 seconds, including `jar` and `reobfJar`). The separately generated `build/qa/pressure-qa.jar` is a test fixture and must not be distributed with the mod. The main JAR contains no QA classes or test structures. Recheck the hash after any further production build.
-
-## Runtime and build configuration
-
-| Component | Version |
-|---|---|
-| Minecraft | 1.20.1 |
-| Forge | 47.1.39 |
-| Java | 17; tested with Eclipse Adoptium 17.0.20.1 |
-| Gradle / ForgeGradle | Wrapper 8.5 / ForgeGradle 6 |
-| Required BdLib | 1.27.0.8-mc1.20.1 |
-| Required Scalable Cats Force | 3.3.0-build-2, with-library |
-| Optional test profile | Mekanism 10.4.16.80; JEI 15.62.0.217; Jade 11.13.3+forge; EnderIO 6.2.18-beta |
+Minecraft **1.20.1**, Forge **47.1.39**, Java **17.0.20.1** (Eclipse Adoptium), Gradle **8.5** / ForgeGradle **6**; BdLib **1.27.0.8-mc1.20.1**, Scalable Cats Force **3.3.0-build-2 with-library**. Optional profile: Mekanism **10.4.16.80**, JEI **15.62.0.217**, Jade **11.13.3+forge**, EnderIO **6.2.18-beta**, CC: Tweaked **1.120.2** (Modrinth Forge artifact ID `gRtcHJd8`, avoiding numeric resolution to Fabric).
 
 From the repository root in PowerShell:
 
 ```powershell
+$env:JAVA_HOME = 'C:\Users\TheRe\.gradle\jdks\eclipse_adoptium-17-amd64-windows\jdk-17.0.20.1+1'
 $env:GRADLE_USER_HOME = 'C:\Users\TheRe\.gradle'
 $env:HTTP_PROXY = 'http://localhost:7897'
 $env:HTTPS_PROXY = 'http://localhost:7897'
-.\gradlew.bat build
-.\gradlew.bat runGameTestServer -PcompatTest
-.\gradlew.bat runClient -PrunDirectory=run
+.\gradlew.bat --offline build qaJar
+.\gradlew.bat --offline qaJar runGameTestServer -PcompatTest
+node scripts/validate-assets.cjs
 ```
 
-Use `--offline` only with the populated cache. For Java/Gradle dependency downloads also pass `-Dhttp.proxyHost=localhost -Dhttp.proxyPort=7897 -Dhttps.proxyHost=localhost -Dhttps.proxyPort=7897` when needed. The user requires this proxy for downloads.
+- Final full build: **passed, 51s**, including reobfuscation (`final-build.log`). Ordinary `test` is `NO-SOURCE`, not runtime acceptance.
+- Source Forge suite: **31 required tests passed, 2m 41s** (`server-all-faces.log`).
+- Normal installed Forge running the **production JAR**: **31 tests passed**, zero failures (`packaged-gametests-isolated.log`).
+- Static assets: **73 models / 62 textures / 37 recipes**, zero issues.
+- Fresh packaged client: **512 states / 35 items**, no missing Pressure sprites/translations; preserved models/items/screens/Jade/Nether effects and four JEI recipes inspected.
+- Paired clients: actual vanilla item/menu packets, chunk unload/reload and new placement/bucket/computer synchronization pass.
+- Dedicated restart: source, contents, six modes, filter, inventory, computer program and sensor counts/averages pass.
+- Final renderer pass: **21 scenes per artifact**, GUI scales **1–4**, and read-only post-restart peer views/tooltips pass. Task clients and servers are shut down after verification.
 
-`-PcompatTest` installs the pinned optional mods in the development run and enables the SRG-to-official mixin remapping needed by EnderIO in userdev. Normal packaged Forge runs do not use that development remapping.
+For online resolution, also pass `-Dhttp.proxyHost=localhost -Dhttp.proxyPort=7897 -Dhttps.proxyHost=localhost -Dhttps.proxyPort=7897`. All downloads use this proxy; offline commands need the populated cache. Detailed normal launch commands are in the verification record. `-PcompatTest` enables optional runtime dependencies and EnderIO's development refmap remapping; installed Forge needs no development remapping.
 
-## Previously implemented changes (preserve; revised acceptance above)
+## Preservation and remaining limits
 
-- Canister placement is server-authoritative and applies Forge's returned drained stack. It validates bounds/permissions, consumes one bucket once, preserves fluid NBT, and rejects partial/invalid placements. Saved flowing-fluid variants are normalized to source fluids, fixing a separately reproduced transient-placement case. The creative tab excludes empty/duplicate flowing variants while retaining other registered fluids.
-- Canister gauges use each stack's current fluid texture, tint and fill ratio. Nether smoke is explicitly sent from the server, and the using player receives the vaporization sound notification. Audio playback itself cannot be heard on this test desktop.
-- All seven missing-texture blocks use resolvable face slots. Directional models retain legacy UV rotation; valve/sensor bodies and conditional pipe arms use the legacy narrow geometry. Pipe X-axis rotation and item transforms are corrected. The pump inventory model inherits the corrected placed model.
-- Tank frames follow synchronized, persisted controller ownership, including diagonal corners. New modules do not evict existing members at configured limits. Adjacent controllers do not share capacity. Indicator caps/vertical gauges and sensor UVs are restored.
-- Tank menu/screen restores the gauge, container input/output, ghost filter, six outputs/redstone controls, player inventory and shift-click. Container handling conserves fluid when output is blocked. Tank interfaces expose item automation. Output modes, 20-tick averages and input/output counters persist.
-- Pressure traversal follows the forward path correctly, handles every endpoint face of a router, avoids forcing unloaded chunks, and refreshes cached connections on chunk changes. Debugger output again enumerates inputs, outputs and traversed blocks.
-- Pump passive filling/filtering and unrestricted legacy default throughput are restored. Existing user configuration values remain intact; the `fluidTransferPerTick` setting controls the cap.
-- Drain voiding/XP conversion and sluice backpressure are distinct again. Hand pumps ray-trace sources, preserve waterlogged blocks, handle stacked/replacement containers and synchronize inventory while retaining the durability registration fix.
-- Searchable configurator and tank-sensor screens, router ghost filters/player inventory, router/filter/output-arrow overlays, and persisted sensor counts/averages are implemented.
-- Mekanism restores all four gas blocks and reversible recipe-based gas/fluid conversion. JEI canister visibility, Jade server data, and EnderIO fluid-conduit lock/clear integration are implemented.
+The prior canister authority/flowing-fluid normalization, dynamic gauges, pump/pipe UVs/transforms, seven textured models, tank ownership/limits/frames, full tank GUI, network traversal/invalidation, router priorities/filters, hand-pump durability/container/waterlogged behavior, drain/sluice distinction, sensors/accounting and Mekanism/JEI/Jade/EnderIO integrations retain passing regressions. New recipe tests fix a historical false positive where an unresolved ingredient was mistaken for an empty slot.
 
-## Historical verification (2026-10-03)
+Existing `run/config/pressure-common.toml` still has `fluidTransferPerTick = 4000`. To choose unrestricted automatic extraction, explicitly set `pressure.fluidTransferPerTick = 2147483647`. Saved values are not overwritten; endpoint capabilities can impose real limits. The separately deployed user artifact/config was not identified by the screenshots.
 
-- Final source server suite: **23 required tests passed**, `gradlew.bat --offline runGameTestServer -PcompatTest`, **2m 16s**; `build/migration-evidence/final-source-tests.log`.
-- Runtime crafting/loot checks cover **37 recipes and 28 registered blocks** with the optional profile.
-- Static asset check: `node scripts/validate-assets.cjs` passes **73 models, 62 local textures and 37 recipe files**.
-- A normal packaged optional-mod client checked **512 block states / 35 items**, confirmed item translations and JEI filtering, and captured 17 views. Jade showed actual tank contents/filter, and real Nether use synchronized the remaining 1500 mB and displayed smoke.
-- Inspected images cover both powered/unpowered facing galleries, rings in three planes, both hands/third-person/dropped pipe, standalone and connected frames, controller removal/reassembly, gauges and all restored screens. Permanent evidence is under `docs/evidence/2026-10-03/`.
-- A normal packaged dedicated server starts with optional mods absent. The optional gas loot tables now use optional item tags so absent Mekanism items do not break loot parsing.
-- Two packaged clients previously verified source placement, exact canister consumption, ghost-filter non-consumption and shared tank/output settings. Shutdown/restart preserved world and player data. The current candidate also passed actual chunk unload/reload and both clients' restored rendering checks.
-
-## Remaining work, blockers and limits
-
-The former classic OpenComputers runtime blocker is **superseded by the user's CC: Tweaked target**, not a reason to defer R3. CC: Tweaked implementation and runtime verification are open; no compatible version/API has been pinned or tested in this revision. Preserve the full command contract: `pp_tank` exposes `isConnected`, `getCapacity`, `hasFluid`, `getFluid`, `getOutputs`, `setOutputMode`, `getFilter`, `setFilter`, `getCountsIn`, `getCountsOut`; `pp_sensor` exposes `getAverages`, `getCounts`. The legacy implementations and October 3 blocker evidence remain historical references, and active flow accounting must be retained.
-
-The desktop has no usable OpenAL audio device, so audible feedback remains unverified. EnderIO also logs missing optional Athena capacitor-bank models when Athena is absent; Pressure's own bake checks pass.
-
-The prior paired chunk cycle and restart passed; repeat relevant checks after the new fixes and on the final revised package. R1–R8 are open work, not established technical blockers. Preserve the checked artifact/evidence, investigate the reported causes, implement the full CC: Tweaked equivalent and address the audible-feedback limit before declaring full completion. Keep README player-facing. The historical pump render and hand-pump constructor fixes must remain intact.
+Audio is user-owned, deferred and unverified. EnderIO can log missing optional Athena capacitor-bank models when Athena is absent; Pressure's models and EnderIO fluid-conduit integration pass. Forge's monitor failure was resolved only in isolated QA profiles using `earlyWindowControl=false`; invalid 1×1 images were rejected/replaced. Idle clients were cleaned up and the completed-client shutdown guard corrected. No unresolved Pressure implementation blocker remains.

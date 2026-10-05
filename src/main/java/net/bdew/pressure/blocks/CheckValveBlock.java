@@ -21,7 +21,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import org.jetbrains.annotations.Nullable;
 
-public final class CheckValveBlock extends BaseEntityBlock implements IPressureConnectableBlock {
+public final class CheckValveBlock extends BaseEntityBlock implements IPressureConnectableBlock, ReversibleFlowPlacement {
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
     public static final BooleanProperty SIGNAL = BooleanProperty.create("signal");
     public static final BooleanProperty FRONT = BooleanProperty.create("front");
@@ -36,7 +36,7 @@ public final class CheckValveBlock extends BaseEntityBlock implements IPressureC
     @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) { builder.add(FACING, SIGNAL, FRONT, BACK); }
     @Override public RenderShape getRenderShape(BlockState state) { return RenderShape.MODEL; }
     @Override public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return connections(defaultBlockState().setValue(FACING, context.getNearestLookingDirection().getOpposite()),
+        return connections(defaultBlockState().setValue(FACING, ReversibleFlowPlacement.facing(context)),
                 context.getLevel(), context.getClickedPos());
     }
 

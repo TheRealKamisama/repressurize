@@ -11,5 +11,6 @@ public final class OptionalGameTests {
     @SubscribeEvent public static void register(RegisterGameTestsEvent event) {
         if(ModList.get().isLoaded("mekanism"))event.register(MekanismGameTests.class);
         if(ModList.get().isLoaded("enderio"))event.register(EnderIOGameTests.class);
+        if(ModList.get().isLoaded("computercraft"))event.register(ComputerCraftGameTests.class);
     }
 }

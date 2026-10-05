@@ -12,6 +12,8 @@ Optional integrations support Mekanism 10.4.16.80, JEI 15.62.0.217, Jade 11.13.3
 
 ## Usage
 
+CC: Tweaked 1.120.2 or newer is optional. A computer beside a Tank Data Port discovers `pp_tank`; one beside a High Pressure Pipe Sensor discovers `pp_sensor`. See [computer commands](docs/COMPUTERCRAFT.md) for the Lua API.
+
 - Right-click a router to open its face settings. Each face cycles through disabled, passive input, active input, and low, medium, or high-priority output, and has an independent redstone gate.
 - Right-click a filterable face with the configurator to search and select a fluid. A fluid container in the off hand applies its fluid immediately; crouch with an empty off hand to clear the filter.
 - Right-click a tank controller to open its screen. It shows fluid contents, container input/output slots, a filter target and six output channels. Click the filter with a fluid container on the cursor to set it, or with an empty cursor to clear it. Output channels appear when outlet faces connect to compatible neighbours; each has its own redstone setting.
@@ -20,3 +22,5 @@ Optional integrations support Mekanism 10.4.16.80, JEI 15.62.0.217, Jade 11.13.3
 - Canisters show their stored fluid and fill level in inventory. Placing a source consumes 1,000 mB, including in creative mode; water vaporizes in the Nether. The hand pump fills inventory containers from fluid blocks or machines, including individual buckets taken from a stack.
 - The drain accepts excess fluid and can turn supported experience fluids into orbs. The sluice holds one bucket and stops accepting more while its outlet is blocked.
 - The automatic fluid-transfer cap is `pressure.fluidTransferPerTick` in `pressure-common.toml`; use `2147483647` for legacy unrestricted throughput.
+- Hold Shift while placing a pump, pressure input/output, sluice, check valve, pipe sensor or pressure gas input/output to reverse its flow orientation.
+- Right-click the Infinite Water Source with an empty bucket to fill it. Both tank fluid-output variants push into adjacent receivers and retain their configured redstone gates when another pipe pulls.

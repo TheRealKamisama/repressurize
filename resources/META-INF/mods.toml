@@ -14,6 +14,13 @@ High-pressure fluid pipes, pumps, valves, filters, canisters, routers, and tanks
 '''
 
 [[dependencies.pressure]]
+modId="computercraft"
+mandatory=false
+versionRange="[1.120.2,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.pressure]]
 modId="forge"
 mandatory=true
 versionRange="[47.1,)"

@@ -1,0 +1,8 @@
+{
+  "mekanism": "1.20.1-10.4.16.80",
+  "tag": "forge:alloys/advanced",
+  "values": [
+    "mekanism:alloy_infused"
+  ],
+  "obsoleteTagPresent": false
+}

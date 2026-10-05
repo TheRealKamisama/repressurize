@@ -27,7 +27,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public final class PipeSensorBlock extends BaseEntityBlock implements net.bdew.pressure.api.IPressureConnectableBlock {
+public final class PipeSensorBlock extends BaseEntityBlock implements net.bdew.pressure.api.IPressureConnectableBlock, ReversibleFlowPlacement {
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
     public static final BooleanProperty SIGNAL = BooleanProperty.create("signal");
     public static final BooleanProperty FRONT = BooleanProperty.create("front");
@@ -42,7 +42,7 @@ public final class PipeSensorBlock extends BaseEntityBlock implements net.bdew.p
     @Override protected void createBlockStateDefinition(StateDefinition.Builder<net.minecraft.world.level.block.Block, BlockState> builder) { builder.add(FACING, SIGNAL, FRONT, BACK); }
     @Override public RenderShape getRenderShape(BlockState state) { return RenderShape.MODEL; }
     @Override public BlockState getStateForPlacement(net.minecraft.world.item.context.BlockPlaceContext context) {
-        return connections(defaultBlockState().setValue(FACING, context.getNearestLookingDirection().getOpposite()),
+        return connections(defaultBlockState().setValue(FACING, ReversibleFlowPlacement.facing(context)),
                 context.getLevel(), context.getClickedPos());
     }
     @Override public BlockEntity newBlockEntity(BlockPos pos, BlockState state) { return new PipeSensorBlockEntity(pos, state); }

@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
-public final class SluiceBlock extends DirectionalMachineBlock {
+public final class SluiceBlock extends DirectionalMachineBlock implements ReversibleFlowPlacement {
     @Override
     public boolean canConnectTo(BlockState state, BlockGetter world, BlockPos pos, Direction side) {
         return state.getValue(FACING).getOpposite() == side;

@@ -1,0 +1,11 @@
+{
+  "filter": "minecraft:water",
+  "passed": true,
+  "offhandEmptyBuckets": 2,
+  "canisterAmount": 1500,
+  "pumpFacing": "north",
+  "tankAmount": 12000,
+  "luaRestart": true,
+  "waterBuckets": 1,
+  "sixOutputs": "RS_OFF"
+}

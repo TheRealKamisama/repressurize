@@ -78,7 +78,9 @@ public final class NetworkQaServer {
     }
 
     public static void stage(ServerPlayer player,int stage){
+        if(stage==6){PeerViewServer.open(player);return;}
         if(!enabled() || player==null)return;
+        if(stage>=4 && RevisionNetworkQA.enabled()){RevisionNetworkQA.stage(player,stage);return;}
         var core=(TankControllerBlockEntity)player.level().getBlockEntity(CORE);
         if(stage==1 && player.getGameProfile().getName().equals("PressureQA1")){
             check(player.level().getFluidState(FLOOR.above()).isSource(),"Server did not retain placed fluid");
@@ -102,7 +104,7 @@ public final class NetworkQaServer {
             if(reloaded.size()==2){
                 write("network-qa-server.json",Map.of("passed",true,"players",players,"fluidAmount",core.getTank().getFluidAmount(),
                         "capacity",core.getTank().getCapacity(),"filter","minecraft:lava","outputMode","RS_ON","canisterAmount",1500,"chunkReloaded",true));
-                server.halt(false);
+                if(RevisionNetworkQA.enabled())RevisionNetworkQA.begin(server);else server.halt(false);
             }
         }
     }

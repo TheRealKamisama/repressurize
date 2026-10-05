@@ -21,4 +21,15 @@ public final class JeiQaPlugin implements IModPlugin {
         if(canisters.isEmpty() || (!PressureConfig.SHOW_CANISTERS.get() && filled!=0))throw new IllegalStateException("JEI canister visibility mismatch");
         System.out.println("PRESSURE_JEI_QA_PASSED canisters="+canisters.size()+" filled="+filled);
     }
+    public static void showGasRecipe(int index){
+        var names=java.util.List.of("gas_input","gas_output","tank_gas_input","tank_gas_output");
+        var type=mezz.jei.api.constants.RecipeTypes.CRAFTING;
+        var recipe=runtime.getRecipeManager().createRecipeLookup(type).get()
+                .filter(r->r.getId().equals(new ResourceLocation("pressure",names.get(index)))).findFirst().orElseThrow();
+        var alloy=net.minecraftforge.registries.ForgeRegistries.ITEMS.getValue(new ResourceLocation("mekanism","alloy_infused"));
+        if(recipe.getIngredients().stream().noneMatch(i->i.test(new net.minecraft.world.item.ItemStack(alloy))))
+            throw new IllegalStateException("JEI gas recipe does not resolve the infused alloy");
+        runtime.getRecipesGui().showRecipes(runtime.getRecipeManager().getRecipeCategory(type),java.util.List.of(recipe),java.util.List.of());
+        System.out.println("PRESSURE_JEI_GAS_RECIPE "+recipe.getId()+" alloy=mekanism:alloy_infused");
+    }
 }

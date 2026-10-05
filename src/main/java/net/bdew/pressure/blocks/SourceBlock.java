@@ -26,6 +26,27 @@ public final class SourceBlock extends Block implements EntityBlock {
         return creative ? new CreativeSourceBlockEntity(pos, state) : new WaterSourceBlockEntity(pos, state);
     }
 
+    @Override
+    public net.minecraft.world.InteractionResult use(BlockState state, Level level, BlockPos pos,
+            net.minecraft.world.entity.player.Player player, net.minecraft.world.InteractionHand hand,
+            net.minecraft.world.phys.BlockHitResult hit) {
+        var held = player.getItemInHand(hand);
+        if (creative || !held.is(net.minecraft.world.item.Items.BUCKET)) return net.minecraft.world.InteractionResult.PASS;
+        if (!level.isClientSide) {
+            var filled = new net.minecraft.world.item.ItemStack(net.minecraft.world.item.Items.WATER_BUCKET);
+            player.setItemInHand(hand, net.minecraft.world.item.ItemUtils.createFilledResult(held, player,
+                    filled.copy()));
+            // Vanilla's creative helper cannot insert into a full inventory. Deliver the result
+            // as a drop in that case, while retaining its duplicate-bucket suppression.
+            if (player.getAbilities().instabuild && !player.getInventory().contains(filled)) player.drop(filled, false);
+            player.awardStat(net.minecraft.stats.Stats.ITEM_USED.get(net.minecraft.world.item.Items.BUCKET));
+            level.playSound(null, pos, net.minecraft.sounds.SoundEvents.BUCKET_FILL,
+                    net.minecraft.sounds.SoundSource.BLOCKS, 1.0F, 1.0F);
+            player.getInventory().setChanged();
+        }
+        return net.minecraft.world.InteractionResult.sidedSuccess(level.isClientSide);
+    }
+
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {

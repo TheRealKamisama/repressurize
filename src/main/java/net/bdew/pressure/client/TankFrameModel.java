@@ -5,6 +5,7 @@ import net.bdew.pressure.blocks.tank.TankStructure;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.block.model.*;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.BlockModelRotation;
 import net.minecraft.core.BlockPos;
@@ -29,6 +30,7 @@ public final class TankFrameModel extends BakedModelWrapper<BakedModel> {
     private static final ModelProperty<Integer> CONNECTIONS = new ModelProperty<>();
     private static final ResourceLocation EDGE = new ResourceLocation("pressure", "block/connected/edge");
     private final Map<Integer, List<BakedQuad>> frames = new ConcurrentHashMap<>();
+    private final Map<String, List<BakedQuad>> indicatorFaces = new ConcurrentHashMap<>();
 
     public TankFrameModel(BakedModel original) { super(original); }
 
@@ -56,7 +58,17 @@ public final class TankFrameModel extends BakedModelWrapper<BakedModel> {
     @Override public List<BakedQuad> getQuads(BlockState state, Direction side, RandomSource random, ModelData data, RenderType type) {
         int mask = data.has(CONNECTIONS) ? data.get(CONNECTIONS) : 0;
         if (side != null && connected(mask, side)) return List.of();
-        List<BakedQuad> result = new ArrayList<>(originalModel.getQuads(state, side, random, data, type));
+        List<BakedQuad> base = originalModel.getQuads(state, side, random, data, type);
+        if (state != null && state.is(net.bdew.pressure.config.PressureContent.TANK_INDICATOR.get())
+                && side != null && side.getAxis().isHorizontal()) {
+            boolean above = connected(mask, Direction.UP) && !diagonal(mask, Direction.UP, side);
+            boolean below = connected(mask, Direction.DOWN) && !diagonal(mask, Direction.DOWN, side);
+            String texture = below ? (above ? "full" : "up") : (above ? "down" : "single");
+            List<BakedQuad> source = base;
+            base = indicatorFaces.computeIfAbsent(side.getName() + ":" + texture,
+                    key -> retexture(source, new ResourceLocation("pressure", "block/tank/indicator/" + texture)));
+        }
+        List<BakedQuad> result = new ArrayList<>(base);
         if (side == null) return result;
         Direction top = side == Direction.UP ? Direction.NORTH : side == Direction.DOWN ? Direction.SOUTH : Direction.UP;
         Direction right = switch (side) {
@@ -70,6 +82,24 @@ public final class TankFrameModel extends BakedModelWrapper<BakedModel> {
                 |(!b&&!l&&!diagonal(mask,bottom,left)?64:0)|(!b&&!r&&!diagonal(mask,bottom,right)?128:0);
         result.addAll(frames.computeIfAbsent(side.ordinal()*256+edges, key -> bake(side,top,right,edges)));
         return result;
+    }
+
+    /** Keep the original face geometry/AO/shading; change only the atlas UVs for column caps. */
+    private static List<BakedQuad> retexture(List<BakedQuad> source, ResourceLocation texture) {
+        TextureAtlasSprite sprite = Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(texture);
+        List<BakedQuad> result = new ArrayList<>();
+        for (BakedQuad quad : source) {
+            int[] vertices = quad.getVertices().clone();
+            TextureAtlasSprite old = quad.getSprite();
+            for (int vertex = 0; vertex < 4; vertex++) {
+                int offset = vertex * (vertices.length / 4);
+                float u = Float.intBitsToFloat(vertices[offset + 4]), v = Float.intBitsToFloat(vertices[offset + 5]);
+                vertices[offset + 4] = Float.floatToRawIntBits(sprite.getU((u - old.getU0()) * 16 / (old.getU1() - old.getU0())));
+                vertices[offset + 5] = Float.floatToRawIntBits(sprite.getV((v - old.getV0()) * 16 / (old.getV1() - old.getV0())));
+            }
+            result.add(new BakedQuad(vertices, quad.getTintIndex(), quad.getDirection(), sprite, quad.isShade(), quad.hasAmbientOcclusion()));
+        }
+        return List.copyOf(result);
     }
 
     private static List<BakedQuad> bake(Direction face, Direction top, Direction right, int mask) {

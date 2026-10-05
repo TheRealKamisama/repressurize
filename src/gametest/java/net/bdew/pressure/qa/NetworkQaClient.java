@@ -50,7 +50,10 @@ public final class NetworkQaClient {
             phase=0;ticks=0;mc.setScreen(new TitleScreen());return;
         }
         if(ticks>(phase==9?6000:2400) && phase<10)throw new IllegalStateException("Network QA timed out at phase "+phase);
-        if(phase==10 && ticks>40){phase=11;mc.stop();return;}
+        // The server can close the connection before the next frame; stop independently
+        // of player/world availability so completed clients cannot linger at the title screen.
+        if(phase==15 && ticks>40){phase=16;mc.stop();return;}
+        if(phase==10 && ticks>40 && !RevisionNetworkQA.enabled()){phase=11;mc.stop();return;}
         if(mc.level==null || mc.player==null || mc.gameMode==null)return;
         if(phase==9 && mc.player.getX()>NetworkQaServer.CORE.getX()+100)visitedAway=true;
         if(phase==9 && visitedAway && mc.player.getX()<NetworkQaServer.CORE.getX()+10){
@@ -59,6 +62,9 @@ public final class NetworkQaClient {
         var core=mc.level.getBlockEntity(NetworkQaServer.CORE) instanceof TankControllerBlockEntity tank?tank:null;
         if(core==null)return;
         boolean primary=mc.player.getGameProfile().getName().equals("PressureQA1");
+        if(phase>=10 && RevisionNetworkQA.enabled()){
+            revision(mc,core,primary);return;
+        }
         boolean placed=mc.level.getFluidState(NetworkQaServer.FLOOR.above()).isSource();
         if(phase==1 && ticks>60){
             if(primary){
@@ -97,6 +103,34 @@ public final class NetworkQaClient {
             }catch(Exception e){throw new IllegalStateException(e);}
             System.out.println("PRESSURE_NETWORK_QA_CHUNK_RELOAD_PASSED "+mc.player.getGameProfile().getName());
             NetworkQaProtocol.CHANNEL.sendToServer(new NetworkQaProtocol.Stage(3));phase=10;ticks=0;
+        }
+    }
+    private static void revision(Minecraft mc,TankControllerBlockEntity core,boolean primary){
+        if(ticks>2400 && phase<15)throw new IllegalStateException("Revision multiplayer timeout at "+phase);
+        if(phase==10 && primary && mc.player.getMainHandItem().is(PressureContent.PUMP.get().asItem()) && mc.player.getOffhandItem().is(Items.BUCKET)){
+            mc.player.closeContainer();mc.setScreen(null);
+            mc.gameMode.useItemOn(mc.player,InteractionHand.OFF_HAND,new BlockHitResult(Vec3.atCenterOf(RevisionNetworkQA.SOURCE),Direction.SOUTH,RevisionNetworkQA.SOURCE,false));
+            phase=11;ticks=0;
+        }else if(phase==11 && primary && mc.player.getOffhandItem().getCount()==2){
+            if(mc.player.getInventory().items.stream().noneMatch(stack->stack.is(Items.WATER_BUCKET)))return;
+            mc.player.setYRot(180);mc.player.setXRot(0);mc.player.setShiftKeyDown(true);
+            mc.player.connection.send(new net.minecraft.network.protocol.game.ServerboundPlayerCommandPacket(mc.player,net.minecraft.network.protocol.game.ServerboundPlayerCommandPacket.Action.PRESS_SHIFT_KEY));
+            var floor=RevisionNetworkQA.PUMP.below();
+            mc.gameMode.useItemOn(mc.player,InteractionHand.MAIN_HAND,new BlockHitResult(Vec3.atCenterOf(floor).add(0,0.5,0),Direction.UP,floor,false));
+            mc.player.setShiftKeyDown(false);
+            mc.player.connection.send(new net.minecraft.network.protocol.game.ServerboundPlayerCommandPacket(mc.player,net.minecraft.network.protocol.game.ServerboundPlayerCommandPacket.Action.RELEASE_SHIFT_KEY));
+            phase=12;ticks=0;
+        }else if((phase==12 && primary || phase==10 && !primary) && mc.level.getBlockState(RevisionNetworkQA.PUMP).is(PressureContent.PUMP.get()) && ticks>20){
+            if(mc.level.getBlockState(RevisionNetworkQA.PUMP).getValue(net.bdew.pressure.blocks.DirectionalMachineBlock.FACING)!=Direction.NORTH)throw new IllegalStateException("Peer Shift placement facing mismatch");
+            NetworkQaProtocol.CHANNEL.sendToServer(new NetworkQaProtocol.Stage(4));phase=13;ticks=0;
+        }else if(phase==13 && core.getFluidFilter()==Fluids.WATER && core.getOutput(5)!=null && core.getOutput(5).mode==RouterRedstoneMode.RS_OFF && ticks>30){
+            for(int slot=0;slot<6;slot++)if(core.getOutput(slot)==null || core.getOutput(slot).mode!=RouterRedstoneMode.RS_OFF)throw new IllegalStateException("Peer Lua output mismatch "+slot);
+            try{
+                Files.writeString(mc.gameDirectory.toPath().resolve("revision-network-client.json"),new com.google.gson.GsonBuilder().setPrettyPrinting().create().toJson(Map.of("passed",true,"player",mc.player.getGameProfile().getName(),"filter","minecraft:water","sixOutputs","RS_OFF","pumpFacing","north")));
+                try(var image=Screenshot.takeScreenshot(mc.getMainRenderTarget())){image.writeToFile(mc.gameDirectory.toPath().resolve("screenshots/revision-network.png"));}
+            }catch(Exception e){throw new IllegalStateException(e);}
+            System.out.println("PRESSURE_REVISION_NETWORK_CLIENT_PASSED "+mc.player.getGameProfile().getName());
+            NetworkQaProtocol.CHANNEL.sendToServer(new NetworkQaProtocol.Stage(5));phase=15;ticks=0;
         }
     }
 }

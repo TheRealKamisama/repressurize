@@ -33,7 +33,8 @@ public abstract class DirectionalMachineBlock extends BaseEntityBlock implements
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return defaultBlockState().setValue(FACING, context.getNearestLookingDirection().getOpposite());
+        return defaultBlockState().setValue(FACING, this instanceof ReversibleFlowPlacement
+                ? ReversibleFlowPlacement.facing(context) : context.getNearestLookingDirection().getOpposite());
     }
 
     @Override

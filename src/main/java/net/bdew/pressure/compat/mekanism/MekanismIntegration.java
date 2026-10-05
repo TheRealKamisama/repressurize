@@ -38,7 +38,7 @@ public final class MekanismIntegration {
         MinecraftForge.EVENT_BUS.addListener((net.minecraftforge.event.OnDatapackSyncEvent event)->GasConversions.clear());
         MinecraftForge.EVENT_BUS.addListener((net.minecraftforge.event.server.ServerStoppedEvent event)->GasConversions.clear());
     }
-    private static final class MachineBlock extends DirectionalMachineBlock {
+    private static final class MachineBlock extends DirectionalMachineBlock implements net.bdew.pressure.blocks.ReversibleFlowPlacement {
         private static final BooleanProperty SIGNAL=BooleanProperty.create("signal");
         private final boolean input;
         private MachineBlock(boolean input){this.input=input;registerDefaultState(defaultBlockState().setValue(SIGNAL,false));}

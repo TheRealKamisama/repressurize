@@ -15,6 +15,44 @@ import net.minecraftforge.gametest.PrefixGameTestTemplate;
 
 @PrefixGameTestTemplate(false)
 public final class MekanismGameTests {
+    @GameTest(templateNamespace="pressure",template="empty")
+    public static void gasRecipesRequireInstalledAdvancedAlloy(GameTestHelper helper) {
+        var alloy = net.minecraftforge.registries.ForgeRegistries.ITEMS.getValue(new ResourceLocation("mekanism","alloy_infused"));
+        var tag = net.minecraft.tags.ItemTags.create(new ResourceLocation("forge","alloys/advanced"));
+        helper.assertTrue(new net.minecraft.world.item.ItemStack(alloy).is(tag),"Installed advanced tag must contain infused alloy");
+        var dummy = new net.minecraft.world.inventory.AbstractContainerMenu(null,0) {
+            @Override public boolean stillValid(net.minecraft.world.entity.player.Player p){return true;}
+            @Override public net.minecraft.world.item.ItemStack quickMoveStack(net.minecraft.world.entity.player.Player p,int i){return net.minecraft.world.item.ItemStack.EMPTY;}
+        };
+        for(String name:java.util.List.of("gas_input","gas_output","tank_gas_input","tank_gas_output")) {
+            var recipe=(net.minecraft.world.item.crafting.ShapedRecipe)helper.getLevel().getRecipeManager().byKey(new ResourceLocation("pressure",name)).orElseThrow();
+            var grid=new net.minecraft.world.inventory.TransientCraftingContainer(dummy,3,3);
+            int alloySlot=-1;
+            for(int i=0;i<recipe.getIngredients().size();i++) {
+                var ingredient=recipe.getIngredients().get(i);
+                if(ingredient==net.minecraft.world.item.crafting.Ingredient.EMPTY)continue;
+                helper.assertTrue(ingredient.getItems().length>0,"Gas recipe cannot have an unresolved ingredient");
+                int slot=i/recipe.getWidth()*3+i%recipe.getWidth();
+                if(ingredient.test(new net.minecraft.world.item.ItemStack(alloy))) {alloySlot=slot;grid.setItem(slot,new net.minecraft.world.item.ItemStack(alloy));}
+                else grid.setItem(slot,ingredient.getItems()[0].copy());
+            }
+            helper.assertTrue(alloySlot>=0 && recipe.matches(grid,helper.getLevel()),"Actual infused alloy crafts "+name);
+            grid.setItem(alloySlot,net.minecraft.world.item.ItemStack.EMPTY);
+            helper.assertTrue(!recipe.matches(grid,helper.getLevel()),"Missing alloy must reject "+name);
+            var player=net.minecraftforge.common.util.FakePlayerFactory.get(helper.getLevel(),new com.mojang.authlib.GameProfile(
+                    java.util.UUID.nameUUIDFromBytes(("pressure-craft-"+name).getBytes(java.nio.charset.StandardCharsets.UTF_8)),"PressureCraft"));
+            player.getAbilities().instabuild=false;player.getInventory().clearContent();
+            var pos=helper.absolutePos(new BlockPos(2,1,2));helper.getLevel().setBlockAndUpdate(pos,net.minecraft.world.level.block.Blocks.CRAFTING_TABLE.defaultBlockState());
+            var menu=new net.minecraft.world.inventory.CraftingMenu(1,player.getInventory(),net.minecraft.world.inventory.ContainerLevelAccess.create(helper.getLevel(),pos));
+            for(int slot=0;slot<9;slot++)menu.slots.get(slot+1).set(grid.getItem(slot).copy());
+            menu.slots.get(alloySlot+1).set(new net.minecraft.world.item.ItemStack(alloy));
+            menu.slotsChanged(menu.getSlot(1).container);
+            helper.assertTrue(menu.getSlot(0).getItem().is(net.minecraftforge.registries.ForgeRegistries.ITEMS.getValue(new ResourceLocation("pressure",name))),"Survival crafting menu resolves "+name);
+            menu.clicked(0,0,net.minecraft.world.inventory.ClickType.PICKUP,player);
+            helper.assertTrue(menu.getCarried().is(net.minecraftforge.registries.ForgeRegistries.ITEMS.getValue(new ResourceLocation("pressure",name))) && menu.getSlot(alloySlot+1).getItem().isEmpty(),"Taking result consumes alloy for "+name);
+        }
+        helper.succeed();
+    }
     @GameTest(templateNamespace="pressure",template="empty",timeoutTicks=80)
     public static void gasPressureInputAndOutputConserveFluid(GameTestHelper helper) {
         helper.setBlock(new BlockPos(1,1,1),MekanismIntegration.GAS_INPUT.get().defaultBlockState().setValue(net.bdew.pressure.blocks.DirectionalMachineBlock.FACING,Direction.EAST));

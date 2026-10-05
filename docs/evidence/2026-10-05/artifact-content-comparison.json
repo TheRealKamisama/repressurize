@@ -1,0 +1,10 @@
+{
+  "verifiedSHA256": "5A72E5C98ED9E3ADCB1726B3A013442FD7B11C00720604CAD2130B0B87D49CF3",
+  "timestampVariantSHA256": "EDDBA9B59DDE044303D4072C3FB076499FE54FF1EA4667C972F6E53615372150",
+  "entrySetsEqual": true,
+  "fileEntries": 477,
+  "differentEntries": [
+    "META-INF/MANIFEST.MF"
+  ],
+  "note": "Only Implementation-Timestamp differs; all production classes, assets, recipes and mod metadata match."
+}

@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import org.jetbrains.annotations.Nullable;
 
-public final class PumpBlock extends DirectionalMachineBlock {
+public final class PumpBlock extends DirectionalMachineBlock implements ReversibleFlowPlacement {
     public static final BooleanProperty SIGNAL = BooleanProperty.create("signal");
 
     public PumpBlock() {

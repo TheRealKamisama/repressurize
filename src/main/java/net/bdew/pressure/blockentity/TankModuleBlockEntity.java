@@ -129,7 +129,8 @@ public class TankModuleBlockEntity extends PressureNodeBlockEntity implements IP
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, TankModuleBlockEntity entity) {
         String module = entity.moduleName();
-        if (!module.equals("tank_pressure_output") && !module.equals("tank_fluid_output_auto") && !module.equals("tank_sensor")) return;
+        if (!module.equals("tank_pressure_output") && !module.equals("tank_fluid_output")
+                && !module.equals("tank_fluid_output_auto") && !module.equals("tank_sensor")) return;
         if (module.equals("tank_sensor")) {
             if (++entity.ticks < 20) return;
             entity.ticks = 0;
@@ -156,7 +157,7 @@ public class TankModuleBlockEntity extends PressureNodeBlockEntity implements IP
                 level.setBlock(pos, state.setValue(TankSensorModuleBlock.SIGNAL, signal), 3);
             return;
         }
-        if (module.equals("tank_fluid_output_auto")) {
+        if (module.equals("tank_fluid_output") || module.equals("tank_fluid_output_auto")) {
             for (Direction facing : Direction.values()) {
                 if (!controller.canOutput(pos, facing) || tank.getFluid().isEmpty()) continue;
                 IFluidHandler target = FluidTransfer.getHandler(level, pos.relative(facing), facing.getOpposite());
